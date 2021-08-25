@@ -1,0 +1,9 @@
+header {
+  @include linx($red, $red, $red, $red);
+
+  padding-top: 20px;
+  
+  img {
+    width: 196px;
+  }
+}

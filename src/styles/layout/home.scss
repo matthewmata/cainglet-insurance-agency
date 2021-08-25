@@ -1,0 +1,46 @@
+.home-page {
+  border-top: solid 5px $red;
+  border-bottom: solid 5px $red;
+}
+
+.inner-padding {
+  @media (max-width: $tablet) {
+    padding: 0 5%;
+  }
+}
+
+.insurance-selector {
+  @include linx($black, $black, $blue, $blue);
+  
+  padding: 40px 0;
+
+  @media (max-width: $tablet) {
+    margin: 10px 0;
+    border-radius: 5px;
+    background-color: $light-grey;
+
+    a {
+      padding: 10px;
+      border-radius: 5px;
+      margin-bottom: 14px;
+      background-color: $white;
+    }
+  }
+
+  @media (min-width: $tablet + 1px) {
+    background-color: $light-grey;
+  }
+
+  img {
+    border-radius: 5px;
+    opacity: 1;
+    width: 260px;
+    height: 160px;
+  }
+
+  p {
+    font-weight: 400;
+    line-height: 1.2;
+    font-size: 2.25rem;
+  }
+}

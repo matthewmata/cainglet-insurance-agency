@@ -1,0 +1,81 @@
+.quote-box-wrap {
+  padding: 20px 0;
+  border-radius: 5px;
+  border-radius: 5px;
+  margin-top: 20px;
+  width: 100%;
+  background-color: $light-blue;
+}
+
+.quote-box {
+
+  @include linx($red, $red, $red, $red);
+
+  padding: 30px;
+  border: 10px solid $white;
+  border-radius: 5px;
+  margin: 10px 10px 0 10px;
+  line-height: 1.625;
+  background-color: $opacity-blue;
+  text-align: center;
+  
+  h6 {
+    margin: 0 0 10px;
+    letter-spacing: 2px;
+    color: #777;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+
+  h3 {
+    line-height: 1.2;
+    letter-spacing: 1px;
+    color: $blue;
+    font-size: 40px;
+    font-weight: 600;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+
+  h5 {
+    margin: 0 0 25px;
+    color: #777;
+    font-size: 18px;
+    font-style: italic;
+  }
+
+  h4 {
+    font-size: 17px;
+  }
+
+  strong {
+    font-weight: bold;
+  }
+
+  form {
+    margin-bottom: 20px;
+  }
+
+  select {
+    padding: 0.75rem 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    background-color: #fff;
+  }
+  
+  input {
+    padding: 0.75rem;
+    margin-top: 5px;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    background-color: $red;
+    color: #fff;
+    cursor: pointer;
+    font-size: 0.875rem;
+    font-weight: 400;
+  }
+}
