@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
 import Header from "../components/Header";
 import NavBar from "../components/Nav-Bar";
@@ -21,7 +20,6 @@ const Home = ({ width }) => {
         {width <= 769 ? <QuoteBox /> : <Hero />}
         <section className="insurance-selector level">
           <div className="level-item has-text-centered">
-            <Link to="/quote/auto-insurance">
               <a href="/quote/auto-insurance">
                 <img src={autoInsuranceImg} alt="cars" />
                 <p>
@@ -30,10 +28,8 @@ const Home = ({ width }) => {
                   Insurance
                 </p>
               </a>
-            </Link>
           </div>
           <div className="level-item has-text-centered">
-            <Link to="/quote/homeowners-insurance">
               <a href="/quote/homeowners-insurance">
                 <img src={homeInsuranceImg} alt="cars" />
                 <p>
@@ -42,10 +38,8 @@ const Home = ({ width }) => {
                   Insurance
                 </p>
               </a>
-            </Link>
           </div>
           <div className="level-item has-text-centered">
-            <Link to="/contact-us">
               <a href="/contact-us">
                 <img src={lifeInsuranceImg} alt="cars" />
                 <p>
@@ -54,10 +48,8 @@ const Home = ({ width }) => {
                   Insurance
                 </p>
               </a>
-            </Link>
           </div>
           <div className="level-item has-text-centered">
-            <Link to="/contact-us">
               <a href="/contact-us">
                 <img src={commercialInsuranceImg} alt="cars" />
                 <p>
@@ -65,7 +57,6 @@ const Home = ({ width }) => {
                   Insurance
                 </p>
               </a>
-            </Link>
           </div>
         </section>
         <Footer />
