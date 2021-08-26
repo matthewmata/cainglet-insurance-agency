@@ -1,2 +1,0 @@
-(this["webpackJsonpaj-cainglet"]=this["webpackJsonpaj-cainglet"]||[]).push([[0],{10:function(e,t,n){"use strict";n.r(t);n(1);var c=n(3),a=n.n(c),s=(n(8),n(0));var i=function(){return Object(s.jsx)("div",{className:"App",children:"test"})};a.a.render(Object(s.jsx)(i,{}),document.getElementById("app"))},8:function(e,t,n){}},[[10,1,2]]]);
-//# sourceMappingURL=main.c02e8b71.chunk.js.map
