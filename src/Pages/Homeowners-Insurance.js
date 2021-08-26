@@ -32,7 +32,6 @@ const HomeOwnerInsurance = ({ width }) => {
     setZip("");
     setPhone("");
     setEmail("");
-    setInterestIn("");
     setComments("");
     setDwellingCoveringAmount("");
     setDeductible("");
@@ -128,7 +127,7 @@ const HomeOwnerInsurance = ({ width }) => {
                 <p>
                   Reason for shopping
                   <select
-                    onChange={(e) => setReasonforShopping(e.target.value)}
+                    onChange={(e) => setReasonForShopping(e.target.value)}
                     name="reasonForShopping"
                   >
                     <option disabled selected>
