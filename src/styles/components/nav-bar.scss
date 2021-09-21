@@ -1,0 +1,33 @@
+.navbar-menu {
+  justify-content: space-evenly;
+  // justify-content: center;
+}
+
+.navbar-start {
+  justify-content: flex-start;
+  margin-right: unset;
+}
+
+.navbar-item {
+  @media (max-width: 1008px) {
+    @include linx($black, $black, $black, $black);
+  }
+  @media (min-width: 1009px) {
+    color: $white;
+    @include linx($white, $white, $white, $white);
+  }
+
+  img {
+    max-height: unset;
+    padding: 15px;
+  }
+  .navbar-dropdown {
+    @include linx($black, $black, $black, $black);
+  }
+}
+
+.nav-icon {
+  @media (max-width: 1008px) {
+    display: none;
+  }
+}

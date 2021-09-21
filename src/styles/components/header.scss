@@ -1,8 +1,13 @@
+.header-display {
+  @media (min-width: 1009px) {
+    display: none;
+  }
+  padding: 20px 0;
+}
+
 header {
   @include linx($red, $red, $red, $red);
 
-  padding-top: 20px;
-  
   img {
     width: 196px;
   }

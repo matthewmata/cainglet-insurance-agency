@@ -1,5 +1,7 @@
 .home-page {
-  border-top: solid 5px $red;
+  @media (max-width: 1008px) {
+    border-top: solid 5px $red;
+  }
   border-bottom: solid 5px $red;
 }
 

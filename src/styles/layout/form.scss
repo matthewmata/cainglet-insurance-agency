@@ -1,5 +1,7 @@
 .form-page {
-  border-top: solid 5px $red;
+  @media (max-width: 1008px) {
+    border-top: solid 5px $red;
+  }
   border-bottom: solid 5px $red;
 }
 
@@ -149,4 +151,10 @@
   margin-top: 26px;
   font-size: 20px;
   line-height: 1.625;
+}
+
+.headshot-container {
+  @media (min-width: $tablet + 1px) {
+    width: 90px;
+  }
 }

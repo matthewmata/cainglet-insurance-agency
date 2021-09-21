@@ -5,8 +5,6 @@ import Footer from "../components/Footer";
 
 const EspanolContactUs = ({ width }) => {
   const [name, setName] = useState("");
-  const [city, setCity] = useState("");
-  const [state, setState] = useState("");
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
   const [interestIn, setInterestIn] = useState("");
@@ -16,11 +14,9 @@ const EspanolContactUs = ({ width }) => {
     e.preventDefault();
     // do something
     console.log(
-      `${name}, ${city}, ${state} ${phone}, ${email}, ${interestIn}, ${comments}`
+      `${name}, ${phone}, ${email}, ${interestIn}, ${comments}`
     );
     setName("");
-    setCity("");
-    setState("");
     setPhone("");
     setEmail("");
     setInterestIn("");
@@ -36,12 +32,11 @@ const EspanolContactUs = ({ width }) => {
           className="form-full container has-text-centered"
           onSubmit={handleSubmit}
         >
-          <h1>¡Permítanos Ayudarle a Ahorrar Dinero!</h1>
-          <img
+          {/* <img
             loading="lazy"
             src="https://www.dankitajimainsuranceagency.com/wp-content/uploads/2020/10/overpaying-1200-by-628-1024x536.jpg"
             alt="Team"
-          ></img>
+          ></img> */}
           <h1>¿Está Pagando Demasiado en Su Seguro de Auto?</h1>
           <h1>¡Llámenos Ahora!</h1>
           <a href="tel:+310-830-7136">
@@ -72,23 +67,7 @@ const EspanolContactUs = ({ width }) => {
           </h5>
           <div className="divider"></div>
           <p className="call-us">
-            <svg
-              width="28px"
-              height="28px"
-              fill="#ed1d2e"
-              viewBox="0 0 492 492"
-            >
-              <path d="M442.668,268.536l-16.116-16.12c-5.06-5.068-11.824-7.872-19.024-7.872c-7.208,0-14.584,2.804-19.644,7.872L283.688,355.992V26.924C283.688,12.084,272.856,0,258.02,0h-22.804c-14.832,0-28.404,12.084-28.404,26.924v330.24L102.824,252.416c-5.068-5.068-11.444-7.872-18.652-7.872c-7.2,0-13.776,2.804-18.84,7.872l-16.028,16.12c-10.488,10.492-10.444,27.56,0.044,38.052l177.576,177.556c5.056,5.056,11.84,7.856,19.1,7.856h0.076c7.204,0,13.972-2.8,19.028-7.856l177.54-177.552C453.164,296.104,453.164,279.028,442.668,268.536z" />
-            </svg>
             <b>¡Obtenga su Cotización Gratis Aquí!</b>
-            <svg
-              width="28px"
-              height="28px"
-              fill="#ed1d2e"
-              viewBox="0 0 492 492"
-            >
-              <path d="M442.668,268.536l-16.116-16.12c-5.06-5.068-11.824-7.872-19.024-7.872c-7.208,0-14.584,2.804-19.644,7.872L283.688,355.992V26.924C283.688,12.084,272.856,0,258.02,0h-22.804c-14.832,0-28.404,12.084-28.404,26.924v330.24L102.824,252.416c-5.068-5.068-11.444-7.872-18.652-7.872c-7.2,0-13.776,2.804-18.84,7.872l-16.028,16.12c-10.488,10.492-10.444,27.56,0.044,38.052l177.576,177.556c5.056,5.056,11.84,7.856,19.1,7.856h0.076c7.204,0,13.972-2.8,19.028-7.856l177.54-177.552C453.164,296.104,453.164,279.028,442.668,268.536z" />
-            </svg>
           </p>
           <div className="contact-us-form">
             <p>
@@ -97,22 +76,6 @@ const EspanolContactUs = ({ width }) => {
                 type="text"
                 name="name"
                 onChange={(e) => setName(e.target.value)}
-              />
-            </p>
-            <p>
-              Ciudad
-              <input
-                type="text"
-                name="city"
-                onChange={(e) => setCity(e.target.value)}
-              />
-            </p>
-            <p>
-              Estado
-              <input
-                type="text"
-                name="state"
-                onChange={(e) => setState(e.target.value)}
               />
             </p>
             <p>
