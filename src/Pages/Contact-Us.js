@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import axios from "axios";
 
 import Header from "../components/Header";
 import NavBar from "../components/Nav-Bar";
@@ -16,7 +17,25 @@ const ContactUs = ({ width }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     // do something
-    console.log(`${name}, ${phone}, ${email}, ${interestIn}, ${comments}`);
+    // console.log(`${name}, ${phone}, ${email}, ${interestIn}, ${comments}`);
+
+    axios({
+      method: "post",
+      url: "https://crossorigin.me/https://app.ringy.com/api/public/leads/new-lead",
+      data: {
+        sid: process.env.REACT_APP_RINGY_SID,
+        authToken: process.env.REACT_APP_RINGY_AUTHTOKEN,
+        phone_number: phone,
+        full_name: name,
+        email: email,
+      },
+      headers: {
+        "Content-Type": "text/plain",
+        "Access-Control-Allow-Origin": "true",
+      },
+    }).then(({ data }) => {
+      console.log(data);
+    });
     setName("");
     setPhone("");
     setEmail("");
