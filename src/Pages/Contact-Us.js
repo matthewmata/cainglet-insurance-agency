@@ -21,7 +21,7 @@ const ContactUs = ({ width }) => {
 
     axios({
       method: "post",
-      url: "https://crossorigin.me/https://app.ringy.com/api/public/leads/new-lead",
+      url: "https://app.ringy.com/api/public/leads/new-lead",
       data: {
         sid: process.env.REACT_APP_RINGY_SID,
         authToken: process.env.REACT_APP_RINGY_AUTHTOKEN,
