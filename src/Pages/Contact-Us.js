@@ -29,13 +29,10 @@ const ContactUs = ({ width }) => {
         full_name: name,
         email: email,
       },
-      headers: {
-        "Content-Type": "text/plain",
-        "Access-Control-Allow-Origin": "true",
-      },
     }).then(({ data }) => {
       console.log(data);
     });
+
     setName("");
     setPhone("");
     setEmail("");
