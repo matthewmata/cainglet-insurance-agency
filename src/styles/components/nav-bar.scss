@@ -1,6 +1,5 @@
 .navbar-menu {
   justify-content: space-evenly;
-  // justify-content: center;
 }
 
 .navbar-start {
@@ -19,7 +18,8 @@
 
   img {
     max-height: unset;
-    padding: 15px;
+    width: 170px;
+    height: 70px;
   }
   .navbar-dropdown {
     @include linx($black, $black, $black, $black);

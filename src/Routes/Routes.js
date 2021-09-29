@@ -6,6 +6,7 @@ import ContactUs from "../Pages/Contact-Us";
 import EspanolContactUs from "../Pages/Espanol-Contact-Us";
 import Auto from "../Pages/Auto-Insurance";
 import HomeOwners from "../Pages/Homeowners-Insurance";
+import Commerical from "../Pages/Commerical-Insurance";
 
 class Routes extends Component {
   constructor(props) {
@@ -38,7 +39,7 @@ class Routes extends Component {
           <Route
             exact
             path="/"
-            render={() => <Home width={this.state.width}/>}
+            render={() => <Home width={this.state.width} />}
           />
           <Route
             path="/about"
@@ -59,6 +60,10 @@ class Routes extends Component {
           <Route
             path="/quote/homeowners-insurance"
             render={() => <HomeOwners width={this.state.width} />}
+          />
+          <Route
+            path="/quote/commerical"
+            render={() => <Commerical width={this.state.width} />}
           />
         </Switch>
       </Router>

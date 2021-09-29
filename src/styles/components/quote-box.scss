@@ -9,12 +9,12 @@
 
 .quote-box {
 
-  @include linx($red, $red, $red, $red);
+  @include linx($burgandy, $burgandy, $burgandy, $burgandy);
 
   padding: 30px;
   border: 10px solid $white;
   border-radius: 5px;
-  margin: 10px 10px 0 10px;
+  margin: 10px 10px 46px 10px;
   line-height: 1.625;
   background-color: $opacity-blue;
   text-align: center;
@@ -72,10 +72,14 @@
     border: none;
     border-radius: 5px;
     width: 100%;
-    background-color: $red;
+    background-color: $burgandy;
     color: #fff;
     cursor: pointer;
     font-size: 0.875rem;
     font-weight: 400;
   }
+}
+
+.submit-form {
+  background-color: $burgandy !important;
 }

@@ -4,11 +4,11 @@
   }
   padding: 20px 0;
 }
+.columns {
+  margin-left: unset;
+  margin-right: unset;
+}
 
 header {
-  @include linx($red, $red, $red, $red);
-
-  img {
-    width: 196px;
-  }
+  @include linx($burgandy, $burgandy, $burgandy, $burgandy);
 }

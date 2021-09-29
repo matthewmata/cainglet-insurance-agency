@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import Logo from "../images/cainglet_logo-02.svg";
 
 const NavBar = () => {
   const [isActive, setisActive] = useState(false);
@@ -52,7 +53,7 @@ const NavBar = () => {
               Life
             </Link>
             <hr className="navbar-divider" />
-            <Link to="/contact-us" className="navbar-item">
+            <Link to="/quote/commerical" className="navbar-item">
               Commerical
             </Link>
           </div>
@@ -65,10 +66,8 @@ const NavBar = () => {
         <div className="navbar-start nav-icon">
           <Link to="/" className="navbar-item">
             <img
-              src="https://bulma.io/images/bulma-logo.png"
+              src={Logo}
               alt="Cainglet logo"
-              width="224"
-              height="56"
             />
           </Link>
         </div>
@@ -87,7 +86,7 @@ const NavBar = () => {
             className="navbar-item"
             href="https://app.ringy.com/book/caingletinsurance"
           >
-            Book Now
+            Book Appointment
           </a>
         </div>
         {/* </div> */}

@@ -6,7 +6,7 @@ import Footer from "../components/Footer";
 
 // import Team from "../images/Highway-1.jpg";
 
-const ContactUs = ({ width }) => {
+const Commerical = ({ width }) => {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
@@ -33,12 +33,46 @@ const ContactUs = ({ width }) => {
           className="form-full container has-text-centered"
           onSubmit={handleSubmit}
         >
-          <h1>Contact Us!</h1>
-          {/* <img
-            loading="lazy"
-            src="https://www.dankitajimainsuranceagency.com/wp-content/uploads/2020/10/overpaying-1200-by-628-1024x536.jpg"
-            alt="Team"
-          ></img> */}
+          <h1>Commerical</h1>
+          <h3>
+            Do you own or operate your own business? The Cainglet Insurance
+            Agency has you covered! We offer reliable, dependable, and
+            affordable business insurance policies for a multitude of different
+            industries. Some industries that we specialize in include:
+          </h3>
+          <div className="columns">
+            <ol className={width > 754 ? "column" : ""}>
+              <li>• Restaurants</li>
+              <li>• Commercial Real Estate Buildings</li>
+              <li>• Condominiums</li>
+              <li>• Apartment Complexes</li>
+              <li>• Engineering Services</li>
+              <li>• Specialty Food Stores</li>
+              <li>• Electrical Contractors</li>
+              <li>• Lawn and Gardening Services</li>
+            </ol>
+            <ol className={width > 754 ? "column" : ""}>
+              <li>• Loan Brokers</li>
+              <li>• Computer Programing Services</li>
+              <li>• Bakeries</li>
+              <li>• Markets</li>
+              <li>• Real Estate Agencies</li>
+              <li>• Legal Services</li>
+              <li>• Auto Body Repair Shops</li>
+              <li>• Offices and Clinics for Medical Doctors</li>
+            </ol>
+            <ol className={width > 754 ? "column" : ""}>
+              <li>• Carpet Cleaning</li>
+              <li>• Barber Shops</li>
+              <li>• Florists</li>
+              <li>• Architecture offices</li>
+              <li>• Animal Specialty Services</li>
+              <li>• Plumbing</li>
+              <li>• Floor Laying</li>
+              <li>• Florists</li>
+            </ol>
+          </div>
+          <h1>AND MANY MORE!</h1>
           <a href="tel:+310-830-7136">
             <p className="call-us">
               <svg
@@ -61,7 +95,7 @@ const ContactUs = ({ width }) => {
             </p>
           </a>
           <h5>
-            <b>Monday - Friday: 9:00 am - 6:00 pm</b>
+            <b>Monday - Friday 9:00 pm - 7:00 pm</b>
             <br />
             <b>Saturday: 10:00 am - 2:00 pm</b>
           </h5>
@@ -138,4 +172,4 @@ const ContactUs = ({ width }) => {
   );
 };
 
-export default ContactUs;
+export default Commerical;

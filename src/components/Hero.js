@@ -12,9 +12,10 @@ const Hero = () => {
         <div className="level">
           <div className="column has-text-centered is-three-quarters">
             <h2 className="hero-text">
-              QUALITY INSURANCE
-              <br /> Fast, Easy & Affordable!
+              CAINGLET INSURANCE AGENCY
+              <br /> Insurance you can depend on!
             </h2>
+            <div className='hero-text-space'></div>
           </div>
           <div className="hero-quote-box is-vcentered ">
             <h6>Get Started Now</h6>

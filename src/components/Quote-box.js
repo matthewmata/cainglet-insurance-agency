@@ -44,8 +44,8 @@ const QuoteBox = () => {
           </a>
         </div>
         <h2>
-          QUALITY INSURANCE
-          <br /> Fast, Easy & Affordable!
+          CAINGLET INSURANCE AGENCY
+          <br /> Insurance you can depend on!
         </h2>
       </div>
     </section>

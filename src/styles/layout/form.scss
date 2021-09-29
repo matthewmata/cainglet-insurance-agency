@@ -1,8 +1,8 @@
 .form-page {
   @media (max-width: 1008px) {
-    border-top: solid 5px $red;
+    border-top: solid 5px $burgandy;
   }
-  border-bottom: solid 5px $red;
+  border-bottom: solid 5px $burgandy;
 }
 
 .inner {
@@ -142,7 +142,7 @@
 }
 
 .call-us {
-  color: $red;
+  color: $burgandy;
   font-size: 36px;
   font-weight: 500;
 }
@@ -156,5 +156,6 @@
 .headshot-container {
   @media (min-width: $tablet + 1px) {
     width: 90px;
+    padding: 0 80px
   }
 }

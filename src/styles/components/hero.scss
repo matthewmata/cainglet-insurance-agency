@@ -14,7 +14,7 @@
 
 .hero-quote-box {
 
-  @include linx($red, $red, $red, $red);
+  @include linx($burgandy, $burgandy, $burgandy, $burgandy);
 
   padding: 30px;
   border: 10px solid $white;
@@ -77,7 +77,7 @@
     border: none;
     border-radius: 5px;
     margin-top: 5px;
-    background-color: $red;
+    background-color: $burgandy;
     cursor: pointer;
     color: #fff;
     font-size: 0.875rem;
@@ -86,10 +86,10 @@
 }
 
 .hero-text {
-  margin-bottom: 50px;
+  // margin: 50px 0 100px;
   line-height: 1.2;
   letter-spacing: 3px;
-  color: $white;
+  color: $burgandy;
   font-weight: 600;
 
   @media (max-width: $tablet) {
@@ -101,4 +101,8 @@
   @media (min-width: $tablet + 1px) {
     font-size: 44px;
   }
+}
+
+.hero-text-space {
+  margin: 240px;
 }
