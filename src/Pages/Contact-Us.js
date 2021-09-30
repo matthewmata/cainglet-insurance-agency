@@ -5,14 +5,11 @@ import Header from "../components/Header";
 import NavBar from "../components/Nav-Bar";
 import Footer from "../components/Footer";
 
- const encode = (data) => {
-   return Object.keys(data)
-     .map(
-       (key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key])
-     )
-     .join("&");
- };
-
+const encode = (data) => {
+  return Object.keys(data)
+    .map((key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+    .join("&");
+};
 
 const ContactUs = ({ width }) => {
   const [name, setName] = useState("");
@@ -25,33 +22,19 @@ const ContactUs = ({ width }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    console.log(
-      `${name}, ${phone}, ${email}, ${interestIn}, ${comments}, ${submit}`
-    );
-    // const response = await axios.post("/.netlify/functions/ringy", {
-    //   full_name: name,
-    //   phone_number: phone,
-    //   email,
-    // });
-
-    // const response = await axios.post("/",
-    //   encode({
-    //     "form-name": "contact-us",
-    //     full_name: name,
-    //     phone_number: phone,
-    //     email,
-    //     interestIn,
-    //     comments,
-    //   })
-    // );
+    const response = await axios.post("/.netlify/functions/ringy", {
+      full_name: name,
+      phone_number: phone,
+      email,
+    });
 
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode({
         "form-name": "contact-us",
-        full_name: name,
-        phone_number: phone,
+        name,
+        phone,
         email,
         interestIn,
         comments,
@@ -60,7 +43,7 @@ const ContactUs = ({ width }) => {
       .then(() => console.log("Success!"))
       .catch((error) => alert(error));
 
-    if (true) {
+    if (response.status === 200) {
       setSubmit(true);
     }
   };

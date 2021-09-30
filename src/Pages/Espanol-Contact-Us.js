@@ -5,6 +5,12 @@ import Header from "../components/Header";
 import NavBar from "../components/Nav-Bar";
 import Footer from "../components/Footer";
 
+const encode = (data) => {
+  return Object.keys(data)
+    .map((key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+    .join("&");
+};
+
 const EspanolContactUs = ({ width }) => {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
@@ -24,6 +30,21 @@ const EspanolContactUs = ({ width }) => {
       email,
     });
 
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({
+        "form-name": "contact-us",
+        name,
+        phone,
+        email,
+        interestIn,
+        comments,
+      }),
+    })
+      .then(() => console.log("Success!"))
+      .catch((error) => alert(error));
+      
     if (response.status === 200) {
       setSubmit(true);
     }
@@ -39,11 +60,6 @@ const EspanolContactUs = ({ width }) => {
           onSubmit={handleSubmit}
           id="form"
         >
-          {/* <img
-            loading="lazy"
-            src="https://www.dankitajimainsuranceagency.com/wp-content/uploads/2020/10/overpaying-1200-by-628-1024x536.jpg"
-            alt="Team"
-          ></img> */}
           <h1>¿Está Pagando Demasiado en Su Seguro de Auto?</h1>
           <h1>¡Llámenos Ahora!</h1>
           <a href="tel:+310-830-7136">

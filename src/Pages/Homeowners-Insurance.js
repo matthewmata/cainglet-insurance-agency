@@ -5,6 +5,12 @@ import Header from "../components/Header";
 import NavBar from "../components/Nav-Bar";
 import Footer from "../components/Footer";
 
+const encode = (data) => {
+  return Object.keys(data)
+    .map((key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+    .join("&");
+};
+
 const HomeOwnerInsurance = ({ width }) => {
   const [name, setName] = useState("");
   const [streetAddress, setStreetAddress] = useState("");
@@ -35,6 +41,28 @@ const HomeOwnerInsurance = ({ width }) => {
       email,
     });
 
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({
+        "form-name": "homeowners-insurance",
+        name,
+        streetAddress,
+        city,
+        state,
+        zip,
+        phone,
+        email,
+        comments,
+        dwellingCoveringAmount,
+        deductible,
+        liabilityLimit,
+        reasonForShopping,
+      }),
+    })
+      .then(() => console.log("Success!"))
+      .catch((error) => alert(error));
+      
     if (response.status === 200) {
       setSubmit(true);
     }

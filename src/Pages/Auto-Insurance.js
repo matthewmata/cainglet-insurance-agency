@@ -5,6 +5,12 @@ import Header from "../components/Header";
 import NavBar from "../components/Nav-Bar";
 import Footer from "../components/Footer";
 
+const encode = (data) => {
+  return Object.keys(data)
+    .map((key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+    .join("&");
+};
+
 const AutoInsurance = ({ width }) => {
   const [name, setName] = useState("");
   const [streetAddress, setStreetAddress] = useState("");
@@ -38,6 +44,32 @@ const AutoInsurance = ({ width }) => {
       full_name: name,
       email,
     });
+
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({
+        "form-name": "auto-insurance",
+        name,
+        streetAddress,
+        city,
+        state,
+        zip,
+        phone,
+        email,
+        comments,
+        gender,
+        birthday,
+        reasonForShopping,
+        driversLicenseNumber,
+        yearOfVehicle1,
+        modelOfVehicle1,
+        makeOfVehicle1,
+        desiredCoverage1,
+      }),
+    })
+      .then(() => console.log("Success!"))
+      .catch((error) => alert(error));
 
     if (response.status === 200) {
       setSubmit(true);

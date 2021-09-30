@@ -8,6 +8,12 @@ import Footer from "../components/Footer";
 import AJ from "../images/Aj-Cainglet-square.png";
 import Alex from "../images/Alex-Cainglet.jpg";
 
+const encode = (data) => {
+  return Object.keys(data)
+    .map((key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+    .join("&");
+};
+
 const About = ({ width }) => {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
@@ -26,6 +32,21 @@ const About = ({ width }) => {
       full_name: name,
       email,
     });
+
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({
+        "form-name": "contact-us",
+        name,
+        phone,
+        email,
+        interestIn,
+        comments,
+      }),
+    })
+      .then(() => console.log("Success!"))
+      .catch((error) => alert(error));
 
     if (response.status === 200) {
       setSubmit(true);

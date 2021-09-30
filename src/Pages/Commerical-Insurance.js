@@ -5,7 +5,12 @@ import Header from "../components/Header";
 import NavBar from "../components/Nav-Bar";
 import Footer from "../components/Footer";
 
-// import Team from "../images/Highway-1.jpg";
+
+const encode = (data) => {
+  return Object.keys(data)
+    .map((key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+    .join("&");
+};
 
 const Commerical = ({ width }) => {
   const [name, setName] = useState("");
@@ -24,6 +29,21 @@ const Commerical = ({ width }) => {
       full_name: name,
       email,
     });
+    
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({
+        "form-name": "contact-us",
+        name,
+        phone,
+        email,
+        interestIn,
+        comments,
+      }),
+    })
+      .then(() => console.log("Success!"))
+      .catch((error) => alert(error));
 
     if (response.status === 200) {
       setSubmit(true);
