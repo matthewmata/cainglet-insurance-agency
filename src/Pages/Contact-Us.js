@@ -5,6 +5,15 @@ import Header from "../components/Header";
 import NavBar from "../components/Nav-Bar";
 import Footer from "../components/Footer";
 
+ const encode = (data) => {
+   return Object.keys(data)
+     .map(
+       (key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key])
+     )
+     .join("&");
+ };
+
+
 const ContactUs = ({ width }) => {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
@@ -25,13 +34,31 @@ const ContactUs = ({ width }) => {
     //   email,
     // });
 
-    // await axios.post("/.netlify/functions/form-submit", {
-    //   full_name: name,
-    //   phone_number: phone,
-    //   email,
-    //   interestIn,
-    //   comments,
-    // });
+    // const response = await axios.post("/",
+    //   encode({
+    //     "form-name": "contact-us",
+    //     full_name: name,
+    //     phone_number: phone,
+    //     email,
+    //     interestIn,
+    //     comments,
+    //   })
+    // );
+
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({
+        "form-name": "contact-us",
+        full_name: name,
+        phone_number: phone,
+        email,
+        interestIn,
+        comments,
+      }),
+    })
+      .then(() => console.log("Success!"))
+      .catch((error) => alert(error));
 
     if (true) {
       setSubmit(true);
@@ -46,11 +73,7 @@ const ContactUs = ({ width }) => {
         <form
           className="form-full container has-text-centered"
           onSubmit={handleSubmit}
-          name="contact-us"
-          method="POST"
-          data-netlify="true"
         >
-          <input type="hidden" name="form-name" value="contact-us" />
           <h1>Contact Us!</h1>
           <a href="tel:+310-830-7136">
             <p className="call-us">
@@ -140,7 +163,6 @@ const ContactUs = ({ width }) => {
             name="submit"
             value="Get Quote!"
             className="submit-form"
-            onSubmit='submit'
           ></input>
           {/* <div data-netlify-recaptcha="true"></div> */}
           {submit ? (
