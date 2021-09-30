@@ -82,7 +82,7 @@ const ContactUs = ({ width }) => {
           <h5>
             <b>Monday - Friday: 9:00 am - 6:00 pm</b>
             <br />
-            <b>Saturday: 10:00 am - 2:00 pm</b>
+            <b>Saturday: 10:00 am - 12:30 pm</b>
           </h5>
           <div className="divider"></div>
           <p className="call-us">
@@ -154,7 +154,7 @@ const ContactUs = ({ width }) => {
               agents will be contacting you ASAP to help you with your quote. If
               you will like to speak with someone immediately, please call us at
               310-830-7136! (Monday to Friday 9:00am to 6:00pm, Saturday 10am to
-              2pm)
+              12:30pm)
             </div>
           ) : (
             ""

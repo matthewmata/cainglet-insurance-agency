@@ -29,7 +29,6 @@ const NavBar = () => {
         id="cainglet-navbar"
         className={`navbar-menu ${isActive ? "is-active" : ""}`}
       >
-        {/* <div className="navbar-start"> */}
         <div className="navbar-start">
           <Link to="/" className="navbar-item">
             Home
@@ -58,17 +57,34 @@ const NavBar = () => {
             </Link>
           </div>
         </div>
-        <div className="navbar-start">
-          <Link to="/about" className="navbar-item">
+        <div className="navbar-item has-dropdown is-hoverable">
+          <Link to="/about" className="navbar-link">
             About
           </Link>
+
+          <div className="navbar-dropdown">
+            <Link to="/about" className="navbar-item">
+              About Us
+            </Link>
+            <hr className="navbar-divider" />
+            <a
+              className="navbar-item"
+              href="https://www.facebook.com/CaingletInsurance/"
+            >
+              Facebook
+            </a>
+            <hr className="navbar-divider" />
+            <a
+              className="navbar-item"
+              href="https://www.instagram.com/CaingletInsurance/"
+            >
+              Instagram
+            </a>
+          </div>
         </div>
         <div className="navbar-start nav-icon">
           <Link to="/" className="navbar-item">
-            <img
-              src={Logo}
-              alt="Cainglet logo"
-            />
+            <img src={Logo} alt="Cainglet logo" />
           </Link>
         </div>
         <div className="navbar-start">

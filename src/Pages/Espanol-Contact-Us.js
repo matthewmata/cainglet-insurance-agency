@@ -155,7 +155,7 @@ const EspanolContactUs = ({ width }) => {
               agentes con licencia se comunicará con usted lo antes posible para
               ayudarlo con su cotización. Si desea hablar con alguien de
               inmediato, llámenos al 310-830-7136. (De lunes a viernes de 9:00am
-              to 6:00pm, Sábado de 10am to 2pm)
+              to 6:00pm, Sábado de 10am to 12:30pm)
             </div>
           ) : (
             ""

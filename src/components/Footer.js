@@ -15,7 +15,7 @@ const Footer = () => (
           <p>
             Email:{" "}
             <a href="mailto: acainglet1@farmersagent.com">
-              acainglet1@farmersagent.com
+              email us
             </a>
           </p>
         </div>
@@ -25,7 +25,7 @@ const Footer = () => (
             <br />
             Monday to Friday: 9:00 am to 6:00 pm
             <br />
-            Saturday: 10:00 am to 2:00 pm
+            Saturday: 10:00 am to 12:30 pm
             <br />
             24 Hours Claims: <a href="tel:+800-435-7764">800-435-7764</a>
           </p>

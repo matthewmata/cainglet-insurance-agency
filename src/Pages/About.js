@@ -157,7 +157,7 @@ const About = ({ width }) => {
                 agents will be contacting you ASAP to help you with your quote.
                 If you will like to speak with someone immediately, please call
                 us at 310-830-7136! (Monday to Friday 9:00am to 6:00pm, Saturday
-                10am to 2pm)
+                10am to 12:30pm)
               </div>
             ) : (
               ""
