@@ -50,6 +50,7 @@ const ContactUs = ({ width }) => {
           method="POST"
           data-netlify="true"
         >
+          <input type="hidden" name="form-name" value="contact-us" />
           <h1>Contact Us!</h1>
           <a href="tel:+310-830-7136">
             <p className="call-us">
@@ -139,7 +140,9 @@ const ContactUs = ({ width }) => {
             name="submit"
             value="Get Quote!"
             className="submit-form"
+            onSubmit='submit'
           ></input>
+          {/* <div data-netlify-recaptcha="true"></div> */}
           {submit ? (
             <div className="submitted">
               Thank You for Requesting an Insurance Quote! One of our licensed
