@@ -1,7 +1,7 @@
 const axios = require("axios");
 const { REACT_APP_RINGY_SID, REACT_APP_RINGY_AUTHTOKEN } = process.env;
 
-exports.handler = async function (event, context, callback) {
+exports.handler = async function (event, context) {
   // console.log('event', event);
   // console.log('context', context);
 

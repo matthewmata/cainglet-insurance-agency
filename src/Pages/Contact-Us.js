@@ -19,12 +19,21 @@ const ContactUs = ({ width }) => {
     console.log(
       `${name}, ${phone}, ${email}, ${interestIn}, ${comments}, ${submit}`
     );
-    const response = await axios.post("/.netlify/functions/ringy", {
-      phone_number: phone,
-      full_name: name,
-      email,
-    });
-    if (response.status === 200) {
+    // const response = await axios.post("/.netlify/functions/ringy", {
+    //   full_name: name,
+    //   phone_number: phone,
+    //   email,
+    // });
+
+    // await axios.post("/.netlify/functions/form-submit", {
+    //   full_name: name,
+    //   phone_number: phone,
+    //   email,
+    //   interestIn,
+    //   comments,
+    // });
+
+    if (true) {
       setSubmit(true);
     }
   };
@@ -37,7 +46,9 @@ const ContactUs = ({ width }) => {
         <form
           className="form-full container has-text-centered"
           onSubmit={handleSubmit}
-          id="form"
+          name="contact-us"
+          method="POST"
+          data-netlify="true"
         >
           <h1>Contact Us!</h1>
           <a href="tel:+310-830-7136">
