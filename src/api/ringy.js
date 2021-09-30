@@ -2,8 +2,8 @@ const axios = require("axios");
 const { REACT_APP_RINGY_SID, REACT_APP_RINGY_AUTHTOKEN } = process.env;
 
 exports.handler = async function (event, context) {
-  // console.log('event', event);
-  // console.log('context', context);
+  console.log('event', event);
+  console.log('context', context);
 
   try {
     const { phone_number, full_name, email } = JSON.parse(event.body);
