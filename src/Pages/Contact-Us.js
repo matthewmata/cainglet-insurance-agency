@@ -28,21 +28,21 @@ const ContactUs = ({ width }) => {
       email,
     });
 
-    // const netlifyResponse = await fetch("/", {
-    //   method: "POST",
-    //   headers: { "Content-Type": "application/x-www-form-urlencoded" },
-    //   body: encode({
-    //     "form-name": "contact-us",
-    //     name,
-    //     phone,
-    //     email,
-    //     interestIn,
-    //     comments,
-    //   }),
-    // })
+    const netlifyResponse = await fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({
+        "form-name": "contact-us",
+        name,
+        phone,
+        email,
+        interestIn,
+        comments,
+      }),
+    })
 
     console.log('rr', ringyResponse);
-    // console.log('nr',netlifyResponse);
+    console.log('nr',netlifyResponse);
 
     if (ringyResponse.status === 200) {
       setSubmit(true);
