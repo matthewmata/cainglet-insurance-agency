@@ -39,29 +39,29 @@ const AutoInsurance = ({ width }) => {
       email,
     });
 
-     const netlifyResponse = await fetch("/", {
-       method: "POST",
-       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-       body: encode({
-         "form-name": "auto-insurance",
-         name,
-         streetAddress,
-         city,
-         state,
-         zip,
-         phone,
-         email,
-         comments,
-         gender,
-         birthday,
-         reasonForShopping,
-         driversLicenseNumber,
-         yearOfVehicle1,
-         modelOfVehicle1,
-         makeOfVehicle1,
-         desiredCoverage1,
-       }),
-     })
+    const netlifyResponse = await fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({
+        "form-name": "auto-insurance",
+        name,
+        streetAddress,
+        city,
+        state,
+        zip,
+        phone,
+        email,
+        comments,
+        gender,
+        birthday,
+        reasonForShopping,
+        driversLicenseNumber,
+        yearOfVehicle1,
+        modelOfVehicle1,
+        makeOfVehicle1,
+        desiredCoverage1,
+      }),
+    });
 
     console.log(netlifyResponse);
     if (ringyResponse.status === 200 || netlifyResponse.status === 200) {
