@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import axios from "axios";
+
 import Header from "../components/Header";
 import NavBar from "../components/Nav-Bar";
 import Footer from "../components/Footer";
@@ -9,18 +11,22 @@ const EspanolContactUs = ({ width }) => {
   const [email, setEmail] = useState("");
   const [interestIn, setInterestIn] = useState("");
   const [comments, setComments] = useState("");
+  const [submit, setSubmit] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // do something
     console.log(
-      `${name}, ${phone}, ${email}, ${interestIn}, ${comments}`
+      `${name}, ${phone}, ${email}, ${interestIn}, ${comments}, ${submit}`
     );
-    setName("");
-    setPhone("");
-    setEmail("");
-    setInterestIn("");
-    setComments("");
+    const response = await axios.post("/.netlify/functions/ringy", {
+      phone_number: phone,
+      full_name: name,
+      email,
+    });
+
+    if (response.status === 200) {
+      setSubmit(true);
+    }
   };
 
   return (
@@ -31,6 +37,7 @@ const EspanolContactUs = ({ width }) => {
         <form
           className="form-full container has-text-centered"
           onSubmit={handleSubmit}
+          id="form"
         >
           {/* <img
             loading="lazy"
@@ -75,6 +82,7 @@ const EspanolContactUs = ({ width }) => {
               <input
                 type="text"
                 name="name"
+                required
                 onChange={(e) => setName(e.target.value)}
               />
             </p>
@@ -83,6 +91,7 @@ const EspanolContactUs = ({ width }) => {
               <input
                 type="text"
                 name="email"
+                required
                 onChange={(e) => setEmail(e.target.value)}
               />
             </p>
@@ -91,6 +100,7 @@ const EspanolContactUs = ({ width }) => {
               <input
                 type="text"
                 name="phone"
+                required
                 onChange={(e) => setPhone(e.target.value)}
               />
             </p>
@@ -100,9 +110,7 @@ const EspanolContactUs = ({ width }) => {
                 onChange={(e) => setInterestIn(e.target.value)}
                 name="interestedIn"
               >
-                <option disabled selected>
-                  ---
-                </option>
+                <option>---</option>
                 <option>Seguro de Auto</option>
                 <option>Seguro de Casa</option>
                 <option>Seguro de Vida</option>
@@ -125,6 +133,17 @@ const EspanolContactUs = ({ width }) => {
             value="¡Obtener un Presupuesto!"
             className="submit-form"
           ></input>
+          {submit ? (
+            <div className="submitted">
+              ¡Gracias por solicitar una cotización de seguro! Uno de nuestros
+              agentes con licencia se comunicará con usted lo antes posible para
+              ayudarlo con su cotización. Si desea hablar con alguien de
+              inmediato, llámenos al 310-830-7136. (De lunes a viernes de 9:00am
+              to 6:00pm, Sábado de 10am to 2pm)
+            </div>
+          ) : (
+            ""
+          )}
           {width <= 1023 ? <div className="divider"></div> : ""}
         </form>
         <Footer />

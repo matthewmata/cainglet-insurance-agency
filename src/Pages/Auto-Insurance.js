@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import axios from "axios";
+
 import Header from "../components/Header";
 import NavBar from "../components/Nav-Bar";
 import Footer from "../components/Footer";
@@ -20,31 +22,26 @@ const AutoInsurance = ({ width }) => {
   const [modelOfVehicle1, setModelOfVehicle1] = useState("");
   const [makeOfVehicle1, setMakeOfVehicle1] = useState("");
   const [desiredCoverage1, setDesiredCoverage1] = useState("");
+  const [submit, setSubmit] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // do something
     console.log(
       `${name}, ${streetAddress}, ${city}, ${state}, ${zip}, 
       ${phone}, ${email}, ${comments}, ${gender}, ${birthday},
-      ${reasonForShopping}, ${driversLicenseNumber}, ${yearOfVehicle1}, ${modelOfVehicle1}, ${makeOfVehicle1}, ${desiredCoverage1}`
+      ${reasonForShopping}, ${driversLicenseNumber}, ${yearOfVehicle1}, ${modelOfVehicle1}, ${makeOfVehicle1}, ${desiredCoverage1},
+      ${submit}`
     );
-    setName("");
-    setStreetAddress("");
-    setCity("");
-    setState("");
-    setZip("");
-    setPhone("");
-    setEmail("");
-    setGender("");
-    setComments("");
-    setBirthday("");
-    setReasonForShopping("");
-    setDriversLicenseNumber("");
-    setYearOfVehicle1("");
-    setModelOfVehicle1("");
-    setMakeOfVehicle1("");
-    setDesiredCoverage1("");
+
+    const response = await axios.post("/.netlify/functions/ringy", {
+      phone_number: phone,
+      full_name: name,
+      email,
+    });
+
+    if (response.status === 200) {
+      setSubmit(true);
+    }
   };
 
   return (
@@ -63,7 +60,7 @@ const AutoInsurance = ({ width }) => {
             insurance with the Cainglet Agency!
           </h3>
           <div className="divider"></div>
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={handleSubmit} id="form">
             <h6>Vehicle Information</h6>
             <div className="columns">
               <div className="column">
@@ -99,9 +96,7 @@ const AutoInsurance = ({ width }) => {
                     onChange={(e) => setDesiredCoverage1(e.target.value)}
                     name="desiredCoverage1"
                   >
-                    <option disabled selected>
-                      ---
-                    </option>
+                    <option>---</option>
                     <option>Liability Only</option>
                     <option>Liability & Uninsured Motorist</option>
                     <option>Full Coverage</option>
@@ -119,6 +114,7 @@ const AutoInsurance = ({ width }) => {
                   <input
                     type="text"
                     name="name"
+                    required
                     onChange={(e) => setName(e.target.value)}
                   />
                 </p>
@@ -128,9 +124,7 @@ const AutoInsurance = ({ width }) => {
                     onChange={(e) => setGender(e.target.value)}
                     name="gender"
                   >
-                    <option disabled selected>
-                      ---
-                    </option>
+                    <option>---</option>
                     <option>Male</option>
                     <option>Female</option>
                   </select>
@@ -216,9 +210,7 @@ const AutoInsurance = ({ width }) => {
                     onChange={(e) => setReasonForShopping(e.target.value)}
                     name="reasonForShopping"
                   >
-                    <option disabled selected>
-                      ---
-                    </option>
+                    <option>---</option>
                     <option>Not insured</option>
                     <option>Currently paying too much</option>
                     <option>Insured with bad company</option>
@@ -241,6 +233,17 @@ const AutoInsurance = ({ width }) => {
               value="Get Quote!"
               className="submit-form"
             ></input>
+            {submit ? (
+              <div className="submitted">
+                Thank You for Requesting an Insurance Quote! One of our licensed
+                agents will be contacting you ASAP to help you with your quote.
+                If you will like to speak with someone immediately, please call
+                us at 310-830-7136! (Monday to Friday 9:00am to 6:00pm, Saturday
+                10am to 2pm)
+              </div>
+            ) : (
+              ""
+            )}
             {width <= 1023 ? <div className="divider"></div> : ""}
           </form>
         </section>

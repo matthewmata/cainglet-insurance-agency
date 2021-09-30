@@ -14,7 +14,9 @@ const Footer = () => (
           </p>
           <p>
             Email:{" "}
-            <a href="mailto: ajcainglet@gmail.com">ajcainglet@gmail.com</a>
+            <a href="mailto: acainglet1@farmersagent.com">
+              acainglet1@farmersagent.com
+            </a>
           </p>
         </div>
         <div className="column has-text-centered">

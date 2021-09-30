@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import axios from "axios";
+
 import Header from "../components/Header";
 import NavBar from "../components/Nav-Bar";
 import Footer from "../components/Footer";
@@ -12,16 +14,22 @@ const About = ({ width }) => {
   const [email, setEmail] = useState("");
   const [interestIn, setInterestIn] = useState("");
   const [comments, setComments] = useState("");
+  const [submit, setSubmit] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // do something
-    console.log(`${name}, ${phone}, ${email}, ${interestIn}, ${comments}`);
-    setName("");
-    setPhone("");
-    setEmail("");
-    setInterestIn("");
-    setComments("");
+    console.log(
+      `${name}, ${phone}, ${email}, ${interestIn}, ${comments}, ${submit}`
+    );
+    const response = await axios.post("/.netlify/functions/ringy", {
+      phone_number: phone,
+      full_name: name,
+      email,
+    });
+
+    if (response.status === 200) {
+      setSubmit(true);
+    }
   };
 
   return (
@@ -63,7 +71,7 @@ const About = ({ width }) => {
             <p className="call-us">
               <b>Contact Us Today!</b>
             </p>
-            <form className="contact-us-form" onSubmit={handleSubmit}>
+            <form className="contact-us-form" onSubmit={handleSubmit} id="form">
               <p>
                 Name
                 <input
@@ -97,9 +105,7 @@ const About = ({ width }) => {
                   onChange={(e) => setInterestIn(e.target.value)}
                   name="interestedIn"
                 >
-                  <option disabled selected>
-                    ---
-                  </option>
+                  <option>---</option>
                   <option>Auto Insurance</option>
                   <option>Homeowners Insurance</option>
                   <option>Business Insurance</option>
@@ -124,6 +130,17 @@ const About = ({ width }) => {
                 className="submit-form"
               ></input>
             </form>
+            {submit ? (
+              <div className="submitted">
+                Thank You for Requesting an Insurance Quote! One of our licensed
+                agents will be contacting you ASAP to help you with your quote.
+                If you will like to speak with someone immediately, please call
+                us at 310-830-7136! (Monday to Friday 9:00am to 6:00pm, Saturday
+                10am to 2pm)
+              </div>
+            ) : (
+              ""
+            )}
             {width <= 1023 ? <div className="divider"></div> : ""}
           </section>
           <Footer />

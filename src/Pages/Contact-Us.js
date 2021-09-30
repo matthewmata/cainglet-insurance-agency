@@ -5,39 +5,28 @@ import Header from "../components/Header";
 import NavBar from "../components/Nav-Bar";
 import Footer from "../components/Footer";
 
-// import Team from "../images/Highway-1.jpg";
-
 const ContactUs = ({ width }) => {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
   const [interestIn, setInterestIn] = useState("");
   const [comments, setComments] = useState("");
+  const [submit, setSubmit] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // do something
-    // console.log(`${name}, ${phone}, ${email}, ${interestIn}, ${comments}`);
 
-    axios({
-      method: "post",
-      url: "https://app.ringy.com/api/public/leads/new-lead",
-      data: {
-        sid: process.env.REACT_APP_RINGY_SID,
-        authToken: process.env.REACT_APP_RINGY_AUTHTOKEN,
-        phone_number: phone,
-        full_name: name,
-        email: email,
-      },
-    }).then(({ data }) => {
-      console.log(data);
+    console.log(
+      `${name}, ${phone}, ${email}, ${interestIn}, ${comments}, ${submit}`
+    );
+    const response = await axios.post("/.netlify/functions/ringy", {
+      phone_number: phone,
+      full_name: name,
+      email,
     });
-
-    setName("");
-    setPhone("");
-    setEmail("");
-    setInterestIn("");
-    setComments("");
+    if (response.status === 200) {
+      setSubmit(true);
+    }
   };
 
   return (
@@ -48,13 +37,9 @@ const ContactUs = ({ width }) => {
         <form
           className="form-full container has-text-centered"
           onSubmit={handleSubmit}
+          id="form"
         >
           <h1>Contact Us!</h1>
-          {/* <img
-            loading="lazy"
-            src="https://www.dankitajimainsuranceagency.com/wp-content/uploads/2020/10/overpaying-1200-by-628-1024x536.jpg"
-            alt="Team"
-          ></img> */}
           <a href="tel:+310-830-7136">
             <p className="call-us">
               <svg
@@ -119,9 +104,7 @@ const ContactUs = ({ width }) => {
                 name="interestedIn"
                 onChange={(e) => setInterestIn(e.target.value)}
               >
-                <option disabled selected>
-                  ---
-                </option>
+                <option>---</option>
                 <option>Auto Insurance</option>
                 <option>Homeowners Insurance</option>
                 <option>Business Insurance</option>
@@ -146,6 +129,17 @@ const ContactUs = ({ width }) => {
             value="Get Quote!"
             className="submit-form"
           ></input>
+          {submit ? (
+            <div className="submitted">
+              Thank You for Requesting an Insurance Quote! One of our licensed
+              agents will be contacting you ASAP to help you with your quote. If
+              you will like to speak with someone immediately, please call us at
+              310-830-7136! (Monday to Friday 9:00am to 6:00pm, Saturday 10am to
+              2pm)
+            </div>
+          ) : (
+            ""
+          )}
           {width <= 1023 ? <div className="divider"></div> : ""}
         </form>
         <Footer />
