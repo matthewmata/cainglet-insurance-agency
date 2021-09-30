@@ -22,15 +22,14 @@ const Commerical = ({ width }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(`${name}, ${phone}, ${email}, ${interestIn}, ${comments}, ${submit}`);
 
-    const response = await axios.post("/.netlify/functions/ringy", {
-      phone_number: phone,
+    const ringyResponse = await axios.post("/.netlify/functions/ringy", {
       full_name: name,
+      phone_number: phone,
       email,
     });
-    
-    fetch("/", {
+
+    const netlifyResponse = await fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode({
@@ -41,11 +40,9 @@ const Commerical = ({ width }) => {
         interestIn,
         comments,
       }),
-    })
-      .then(() => console.log("Success!"))
-      .catch((error) => alert(error));
+    });
 
-    if (response.status === 200) {
+    if (ringyResponse.status === 200 || netlifyResponse.status === 200) {
       setSubmit(true);
     }
   };

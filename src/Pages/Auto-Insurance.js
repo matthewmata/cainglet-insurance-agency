@@ -39,39 +39,37 @@ const AutoInsurance = ({ width }) => {
       ${submit}`
     );
 
-    const response = await axios.post("/.netlify/functions/ringy", {
+    const ringyResponse = await axios.post("/.netlify/functions/ringy", {
       phone_number: phone,
       full_name: name,
       email,
     });
 
-    fetch("/", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({
-        "form-name": "auto-insurance",
-        name,
-        streetAddress,
-        city,
-        state,
-        zip,
-        phone,
-        email,
-        comments,
-        gender,
-        birthday,
-        reasonForShopping,
-        driversLicenseNumber,
-        yearOfVehicle1,
-        modelOfVehicle1,
-        makeOfVehicle1,
-        desiredCoverage1,
-      }),
-    })
-      .then(() => console.log("Success!"))
-      .catch((error) => alert(error));
+     const netlifyResponse = await fetch("/", {
+       method: "POST",
+       headers: { "Content-Type": "application/x-www-form-urlencoded" },
+       body: encode({
+         "form-name": "auto-insurance",
+         name,
+         streetAddress,
+         city,
+         state,
+         zip,
+         phone,
+         email,
+         comments,
+         gender,
+         birthday,
+         reasonForShopping,
+         driversLicenseNumber,
+         yearOfVehicle1,
+         modelOfVehicle1,
+         makeOfVehicle1,
+         desiredCoverage1,
+       }),
+     })
 
-    if (response.status === 200) {
+    if (ringyResponse.status === 200 || netlifyResponse.status === 200) {
       setSubmit(true);
     }
   };

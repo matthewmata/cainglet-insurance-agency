@@ -41,10 +41,7 @@ const ContactUs = ({ width }) => {
       }),
     })
 
-    console.log('rr', ringyResponse);
-    console.log('nr',netlifyResponse);
-
-    if (ringyResponse.status === 200) {
+    if (ringyResponse.status === 200 || netlifyResponse.status === 200) {
       setSubmit(true);
     }
   };

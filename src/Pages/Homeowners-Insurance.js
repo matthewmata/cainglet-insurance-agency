@@ -35,13 +35,13 @@ const HomeOwnerInsurance = ({ width }) => {
       ${submit}`
     );
 
-    const response = await axios.post("/.netlify/functions/ringy", {
+    const ringyResponse = await axios.post("/.netlify/functions/ringy", {
       phone_number: phone,
       full_name: name,
       email,
     });
 
-    fetch("/", {
+    const netlifyResponse = await fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode({
@@ -60,10 +60,8 @@ const HomeOwnerInsurance = ({ width }) => {
         reasonForShopping,
       }),
     })
-      .then(() => console.log("Success!"))
-      .catch((error) => alert(error));
       
-    if (response.status === 200) {
+    if (ringyResponse.status === 200 || netlifyResponse.status === 200) {
       setSubmit(true);
     }
   };
