@@ -1,7 +1,5 @@
 [build]
-    command = "npm run build"
     functions = "src/api"
-    publish = "build"
     
 [[redirects]]
   from = "/*"
