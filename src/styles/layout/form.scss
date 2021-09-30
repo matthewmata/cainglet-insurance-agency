@@ -122,6 +122,9 @@
 .submitted {
   padding: 20px;
   border: 2px solid $green;
+  @media (max-width: $tablet) {
+    margin-top: 16px;
+  }
 }
 
 .divider {
@@ -161,6 +164,6 @@
 .headshot-container {
   @media (min-width: $tablet + 1px) {
     width: 90px;
-    padding: 0 80px
+    padding: 0 80px;
   }
 }
