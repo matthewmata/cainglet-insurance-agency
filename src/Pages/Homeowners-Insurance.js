@@ -28,12 +28,6 @@ const HomeOwnerInsurance = ({ width }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(
-      `${name}, ${streetAddress}, ${city}, ${state}, ${zip}, 
-      ${phone}, ${email}, ${comments},
-      ${dwellingCoveringAmount}, ${deductible}, ${liabilityLimit}, ${reasonForShopping},
-      ${submit}`
-    );
 
     const ringyResponse = await axios.post("/.netlify/functions/ringy", {
       phone_number: phone,
@@ -61,6 +55,8 @@ const HomeOwnerInsurance = ({ width }) => {
       }),
     })
       
+    console.log(netlifyResponse);
+    
     if (ringyResponse.status === 200 || netlifyResponse.status === 200) {
       setSubmit(true);
     }

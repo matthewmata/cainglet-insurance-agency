@@ -32,12 +32,6 @@ const AutoInsurance = ({ width }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(
-      `${name}, ${streetAddress}, ${city}, ${state}, ${zip}, 
-      ${phone}, ${email}, ${comments}, ${gender}, ${birthday},
-      ${reasonForShopping}, ${driversLicenseNumber}, ${yearOfVehicle1}, ${modelOfVehicle1}, ${makeOfVehicle1}, ${desiredCoverage1},
-      ${submit}`
-    );
 
     const ringyResponse = await axios.post("/.netlify/functions/ringy", {
       phone_number: phone,
@@ -69,6 +63,7 @@ const AutoInsurance = ({ width }) => {
        }),
      })
 
+    console.log(netlifyResponse);
     if (ringyResponse.status === 200 || netlifyResponse.status === 200) {
       setSubmit(true);
     }
