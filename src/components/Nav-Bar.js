@@ -70,6 +70,7 @@ const NavBar = () => {
             <a
               className="navbar-item"
               href="https://www.facebook.com/CaingletInsurance/"
+              target="_blank"
             >
               Facebook
             </a>
@@ -77,6 +78,7 @@ const NavBar = () => {
             <a
               className="navbar-item"
               href="https://www.instagram.com/CaingletInsurance/"
+              target="_blank"
             >
               Instagram
             </a>
@@ -101,6 +103,7 @@ const NavBar = () => {
           <a
             className="navbar-item"
             href="https://app.ringy.com/book/caingletinsurance"
+            target="_blank"
           >
             Book Appointment
           </a>
