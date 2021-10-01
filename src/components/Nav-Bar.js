@@ -105,7 +105,6 @@ const NavBar = () => {
             Book Appointment
           </a>
         </div>
-        {/* </div> */}
       </div>
     </nav>
   );

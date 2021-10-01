@@ -63,7 +63,6 @@ const AutoInsurance = ({ width }) => {
       }),
     });
 
-    console.log(netlifyResponse);
     if (ringyResponse.status === 200 || netlifyResponse.status === 200) {
       setSubmit(true);
     }

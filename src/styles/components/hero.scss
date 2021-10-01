@@ -13,7 +13,6 @@
 }
 
 .hero-quote-box {
-
   @include linx($burgandy, $burgandy, $burgandy, $burgandy);
 
   padding: 30px;
@@ -26,7 +25,11 @@
   background-color: $opacity-blue;
   text-align: center;
 
-  h6 {
+  h1 {
+    font-size: 24px;
+  }
+
+  h2 {
     margin: 0 0 10px;
     letter-spacing: 2px;
     color: $dark-grey;
@@ -42,18 +45,14 @@
     letter-spacing: 1px;
   }
 
-  h2 {
-    font-size: 24px;
-  }
-
-  h5 {
+  h4 {
     margin: 0 0 25px;
     color: #777;
     font-size: 18px;
     font-style: italic;
   }
 
-  h4 {
+  h5 {
     font-size: 17px;
   }
 
@@ -97,7 +96,7 @@
     margin: 0 0 16px;
     font-size: 28px;
   }
-  
+
   @media (min-width: $tablet + 1px) {
     font-size: 44px;
   }

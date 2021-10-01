@@ -20,43 +20,43 @@ const Home = ({ width }) => {
         {width <= 769 ? <QuoteBox /> : <Hero />}
         <section className="insurance-selector level">
           <div className="level-item has-text-centered">
-              <a href="/quote/auto-insurance">
-                <img src={autoInsuranceImg} alt="cars" />
-                <p>
-                  Auto
-                  <br />
-                  Insurance
-                </p>
-              </a>
+            <a href="/quote/auto-insurance">
+              <img src={autoInsuranceImg} alt="cars" />
+              <p>
+                Auto
+                <br />
+                Insurance
+              </p>
+            </a>
           </div>
           <div className="level-item has-text-centered">
-              <a href="/quote/homeowners-insurance">
-                <img src={homeInsuranceImg} alt="cars" />
-                <p>
-                  Home
-                  <br />
-                  Insurance
-                </p>
-              </a>
+            <a href="/quote/homeowners-insurance">
+              <img src={homeInsuranceImg} alt="cars" />
+              <p>
+                Home
+                <br />
+                Insurance
+              </p>
+            </a>
           </div>
           <div className="level-item has-text-centered">
-              <a href="/contact-us">
-                <img src={lifeInsuranceImg} alt="cars" />
-                <p>
-                  Life
-                  <br />
-                  Insurance
-                </p>
-              </a>
+            <a href="/contact-us">
+              <img src={lifeInsuranceImg} alt="cars" />
+              <p>
+                Life
+                <br />
+                Insurance
+              </p>
+            </a>
           </div>
           <div className="level-item has-text-centered">
-              <a href="/contact-us">
-                <img src={commercialInsuranceImg} alt="cars" />
-                <p>
-                  Commercial <br />
-                  Insurance
-                </p>
-              </a>
+            <a href="/contact-us">
+              <img src={commercialInsuranceImg} alt="cars" />
+              <p>
+                Commercial <br />
+                Insurance
+              </p>
+            </a>
           </div>
         </section>
         <Footer />

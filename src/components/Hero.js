@@ -11,23 +11,23 @@ const Hero = () => {
       <div className="container">
         <div className="level">
           <div className="column has-text-centered is-three-quarters">
-            <h2 className="hero-text">
+            <h1 className="hero-text">
               CAINGLET INSURANCE AGENCY
               <br /> Insurance you can depend on!
-            </h2>
+            </h1>
             <div className='hero-text-space'></div>
           </div>
           <div className="hero-quote-box is-vcentered ">
-            <h6>Get Started Now</h6>
+            <h2>Get Started Now</h2>
             <h3>Get a Free Quote!</h3>
-            <h5>
+            <h4>
               Free personalized consulting
               <br />
               from one of our agents!
-            </h5>
-            <h4>
-              <strong>Select type of insurance…</strong>
             </h4>
+            <h5>
+              <strong>Select type of insurance…</strong>
+            </h5>
             <form>
               <select onChange={(e) => setUrl(e.target.value)}>
                 <option value="/quote/auto-insurance">Auto Insurance</option>
@@ -48,13 +48,13 @@ const Hero = () => {
                 ></input>
               </Link>
             </form>
-            <h4>
+            <h5>
               <strong>Or call us!</strong>
-            </h4>
+            </h5>
             <a href="tel:+310-830-7136">
-              <h2>
+              <h1>
                 <strong>310-830-7136</strong>
-              </h2>
+              </h1>
             </a>
           </div>
         </div>

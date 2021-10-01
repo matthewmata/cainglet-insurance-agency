@@ -8,9 +8,9 @@ const QuoteBox = () => {
     <section className="quote-box-wrap">
       <div className="hero-text has-text-centered">
         <div className="has-text-centered quote-box">
-          <h6>Let’s Get Started</h6>
-          <h3>Get a Free Quote!</h3>
-          <h5>Includes personal service from one of our agents!</h5>
+          <h1>Let’s Get Started</h1>
+          <h2>Get a Free Quote!</h2>
+          <h3>Includes personal service from one of our agents!</h3>
           <h4>
             <strong>Select type of insurance…</strong>
           </h4>
@@ -38,15 +38,15 @@ const QuoteBox = () => {
             <strong>Or call us!</strong>
           </h4>
           <a href="tel:+310-830-7136">
-            <h2>
+            <h5>
               <strong>310-830-7136</strong>
-            </h2>
+            </h5>
           </a>
         </div>
-        <h2>
+        <h5>
           CAINGLET INSURANCE AGENCY
           <br /> Insurance you can depend on!
-        </h2>
+        </h5>
       </div>
     </section>
   );

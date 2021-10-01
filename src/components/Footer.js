@@ -3,7 +3,7 @@ import React from "react";
 const Footer = () => (
   <footer className="footer-main">
     <div className="footer-contact-us">
-      <h2>Contact Us!</h2>
+      <h1>Contact Us!</h1>
       <div className="columns">
         <div className="column has-text-centered">
           <p>
@@ -13,10 +13,7 @@ const Footer = () => (
             Text Us: <a href="tel:+916-827-3385">916-827-3385</a>
           </p>
           <p>
-            Email:{" "}
-            <a href="mailto: acainglet1@farmersagent.com">
-              email us
-            </a>
+            Email: <a href="mailto: acainglet1@farmersagent.com">email us</a>
           </p>
         </div>
         <div className="column has-text-centered">
