@@ -10,7 +10,7 @@ const Footer = () => (
             Call Us: <a href="tel:310-830-7136">310-830-7136</a>
           </p>
           <p>
-            Text Us: <a href="tel:916-827-3385">916-827-3385</a>
+            Text Us: <a href="sms:916-827-3385">916-827-3385</a>
           </p>
           <p>
             Email: <a href="mailto: acainglet1@farmersagent.com">email us</a>
