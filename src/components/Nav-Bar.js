@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import Logo from "../images/cainglet_logo-02.svg";
+import Logo from "../images/cainglet_logo-04.svg";
 
 const NavBar = () => {
   const [isActive, setisActive] = useState(false);

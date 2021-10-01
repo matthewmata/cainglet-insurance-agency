@@ -5,7 +5,6 @@ import Header from "../components/Header";
 import NavBar from "../components/Nav-Bar";
 import Footer from "../components/Footer";
 
-
 const encode = (data) => {
   return Object.keys(data)
     .map((key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
