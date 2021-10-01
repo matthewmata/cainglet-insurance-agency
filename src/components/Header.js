@@ -15,7 +15,7 @@ const Header = () => (
         </a>
       </div>
       <div className="column has-text-centered">
-        <a href="tel:+310-830-7136">
+        <a href="tel:310-830-7136">
           <p className="is-size-4 has-text-weight-semibold">
             <svg
               width="24px"
@@ -28,7 +28,7 @@ const Header = () => (
             Call: 310-830-7136
           </p>
         </a>
-        <a href="tel:+916-827-3385">
+        <a href="tel:916-827-3385">
           <p className="is-size-4 has-text-weight-semibold">
             <svg
               width="24px"
