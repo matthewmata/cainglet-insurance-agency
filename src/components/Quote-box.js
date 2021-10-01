@@ -37,7 +37,7 @@ const QuoteBox = () => {
           <h4>
             <strong>Or call us!</strong>
           </h4>
-          <a href="tel:+310-830-7136">
+          <a href="tel:310-830-7136">
             <h5>
               <strong>310-830-7136</strong>
             </h5>
