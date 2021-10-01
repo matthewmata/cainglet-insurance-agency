@@ -80,8 +80,8 @@ const About = ({ width }) => {
             </div>
             <h3>
               Please feel free to call us at{" "}
-              <a href="tel:+310-830-7136">( 310-830-7136 )</a> or
-              <a href="mailto: ajcainglet@gmail.com"> email us </a>
+              <a href="tel:310-830-7136">( 310-830-7136 )</a> or
+              <a href="mailto:acainglet1@farmersagent.com"> email us </a>
               if you have any questions with your insurance needs!
             </h3>
             <div className="divider"></div>

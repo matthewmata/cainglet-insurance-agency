@@ -78,7 +78,7 @@ const AutoInsurance = ({ width }) => {
           <h2>Get your Free Auto Insurance Quote Today!</h2>
           <h3>
             Please give us a call {""}
-            <a href="tel:+310-830-7136">(310-830-7136)</a>
+            <a href="tel:310-830-7136">(310-830-7136)</a>
             {""} or fill out the form below and we will be very happy to help
             you purchase auto insurance smartly with quality and affordable
             insurance with the Cainglet Agency!

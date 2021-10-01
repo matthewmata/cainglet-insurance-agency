@@ -56,7 +56,7 @@ const ContactUs = ({ width }) => {
           onSubmit={handleSubmit}
         >
           <h1>Contact Us!</h1>
-          <a href="tel:+310-830-7136">
+          <a href="tel:310-830-7136">
             <p className="call-us">
               <svg
                 width="28px"

@@ -58,7 +58,7 @@ const EspanolContactUs = ({ width }) => {
         >
           <h1>¿Está Pagando Demasiado en Su Seguro de Auto?</h1>
           <h1>¡Llámenos Ahora!</h1>
-          <a href="tel:+310-830-7136">
+          <a href="tel:310-830-7136">
             <p className="call-us">
               <svg
                 width="28px"

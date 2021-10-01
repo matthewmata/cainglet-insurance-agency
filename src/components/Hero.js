@@ -51,7 +51,7 @@ const Hero = () => {
             <h5>
               <strong>Or call us!</strong>
             </h5>
-            <a href="tel:+310-830-7136">
+            <a href="tel:310-830-7136">
               <h1>
                 <strong>310-830-7136</strong>
               </h1>

@@ -7,10 +7,10 @@ const Footer = () => (
       <div className="columns">
         <div className="column has-text-centered">
           <p>
-            Call Us: <a href="tel:+310-830-7136">310-830-7136</a>
+            Call Us: <a href="tel:310-830-7136">310-830-7136</a>
           </p>
           <p>
-            Text Us: <a href="tel:+916-827-3385">916-827-3385</a>
+            Text Us: <a href="tel:916-827-3385">916-827-3385</a>
           </p>
           <p>
             Email: <a href="mailto: acainglet1@farmersagent.com">email us</a>
@@ -24,7 +24,7 @@ const Footer = () => (
             <br />
             Saturday: 10:00 am to 12:30 pm
             <br />
-            24 Hours Claims: <a href="tel:+800-435-7764">800-435-7764</a>
+            24 Hours Claims: <a href="tel:800-435-7764">800-435-7764</a>
           </p>
         </div>
       </div>

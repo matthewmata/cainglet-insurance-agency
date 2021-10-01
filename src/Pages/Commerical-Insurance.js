@@ -96,7 +96,7 @@ const Commerical = ({ width }) => {
             </ol>
           </div>
           <h1>AND MANY MORE!</h1>
-          <a href="tel:+310-830-7136">
+          <a href="tel:310-830-7136">
             <p className="call-us">
               <svg
                 width="28px"
