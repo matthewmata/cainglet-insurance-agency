@@ -3,6 +3,7 @@ import axios from "axios";
 
 import Header from "../components/Header";
 import NavBar from "../components/Nav-Bar";
+import Car from "../components/Car";
 import Footer from "../components/Footer";
 
 const encode = (data) => {
@@ -28,7 +29,49 @@ const AutoInsurance = ({ width }) => {
   const [modelOfVehicle1, setModelOfVehicle1] = useState("");
   const [makeOfVehicle1, setMakeOfVehicle1] = useState("");
   const [desiredCoverage1, setDesiredCoverage1] = useState("");
+  const [yearOfVehicle2, setYearOfVehicle2] = useState("");
+  const [modelOfVehicle2, setModelOfVehicle2] = useState("");
+  const [makeOfVehicle2, setMakeOfVehicle2] = useState("");
+  const [desiredCoverage2, setDesiredCoverage2] = useState("");
+  const [yearOfVehicle3, setYearOfVehicle3] = useState("");
+  const [modelOfVehicle3, setModelOfVehicle3] = useState("");
+  const [makeOfVehicle3, setMakeOfVehicle3] = useState("");
+  const [desiredCoverage3, setDesiredCoverage3] = useState("");
+  const [yearOfVehicle4, setYearOfVehicle4] = useState("");
+  const [modelOfVehicle4, setModelOfVehicle4] = useState("");
+  const [makeOfVehicle4, setMakeOfVehicle4] = useState("");
+  const [desiredCoverage4, setDesiredCoverage4] = useState("");
   const [submit, setSubmit] = useState(false);
+  const [twoCars, setTwoCars] = useState(false);
+  const [threeCars, setThreeCars] = useState(false);
+  const [fourCars, setFourCars] = useState(false);
+
+  const carFunctions = [
+    [
+      setYearOfVehicle1,
+      setMakeOfVehicle1,
+      setModelOfVehicle1,
+      setDesiredCoverage1,
+    ],
+    [
+      setYearOfVehicle2,
+      setMakeOfVehicle2,
+      setModelOfVehicle2,
+      setDesiredCoverage2,
+    ],
+    [
+      setYearOfVehicle3,
+      setMakeOfVehicle3,
+      setModelOfVehicle3,
+      setDesiredCoverage3,
+    ],
+    [
+      setYearOfVehicle4,
+      setMakeOfVehicle4,
+      setModelOfVehicle4,
+      setDesiredCoverage4,
+    ],
+  ];
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -60,11 +103,38 @@ const AutoInsurance = ({ width }) => {
         modelOfVehicle1,
         makeOfVehicle1,
         desiredCoverage1,
+        yearOfVehicle2,
+        modelOfVehicle2,
+        makeOfVehicle2,
+        desiredCoverage2,
+        yearOfVehicle3,
+        modelOfVehicle3,
+        makeOfVehicle3,
+        desiredCoverage3,
+        yearOfVehicle4,
+        modelOfVehicle4,
+        makeOfVehicle4,
+        desiredCoverage4,
       }),
     });
 
     if (ringyResponse.status === 200 || netlifyResponse.status === 200) {
       setSubmit(true);
+    }
+  };
+
+  const handleAnotherCar = (i) => {
+    if (i === 1) {
+      setTwoCars(!twoCars);
+      setThreeCars(false);
+      setFourCars(false);
+    }
+    if (i === 2) {
+      setThreeCars(!threeCars);
+      setFourCars(false);
+    }
+    if (i === 3) {
+      setFourCars(!fourCars);
     }
   };
 
@@ -86,50 +156,26 @@ const AutoInsurance = ({ width }) => {
           <div className="divider"></div>
           <form onSubmit={handleSubmit} id="form">
             <h6>Vehicle Information</h6>
-            <div className="columns">
-              <div className="column">
-                <p>
-                  Year of Vehicle
-                  <input
-                    type="text"
-                    name="yearOfVehicle1"
-                    onChange={(e) => setYearOfVehicle1(e.target.value)}
+            {
+            carFunctions.map((funcs, index) => {
+              if (
+                (index === 0) ||
+                (index === 1 && twoCars) ||
+                (index === 2 && threeCars) ||
+                (index === 3 && fourCars)
+              ) {
+                return (
+                  <Car
+                    funcs={funcs}
+                    index={index}
+                    handleAnotherCar={handleAnotherCar}
+                    key={index}
+                    arrow={[twoCars, threeCars, fourCars]}
                   />
-                </p>
-                <p>
-                  Make of Vehicle
-                  <input
-                    type="text"
-                    name="makeOfVehicle1"
-                    onChange={(e) => setMakeOfVehicle1(e.target.value)}
-                  />
-                </p>
-              </div>
-              <div className="column">
-                <p>
-                  Model of Vehicle
-                  <input
-                    type="text"
-                    name="modelOfVehicle1"
-                    onChange={(e) => setModelOfVehicle1(e.target.value)}
-                  />
-                </p>
-                <p>
-                  Desired Coverage
-                  <select
-                    onChange={(e) => setDesiredCoverage1(e.target.value)}
-                    name="desiredCoverage1"
-                  >
-                    <option>---</option>
-                    <option>Liability Only</option>
-                    <option>Liability & Uninsured Motorist</option>
-                    <option>Full Coverage</option>
-                    <option>Full Coverage & Uninsured Motorist</option>
-                    <option>Not Sure</option>
-                  </select>
-                </p>
-              </div>
-            </div>
+                );
+              }
+              return '';
+            })}
             <h6>Driver Information</h6>
             <div className="columns">
               <div className="column">
