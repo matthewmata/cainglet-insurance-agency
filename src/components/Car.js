@@ -5,43 +5,55 @@ const Car = ({ funcs, index, handleAnotherCar, arrow }) => (
     <div className="columns">
       <div className="column">
         <p>
-          Year of Vehicle
-          <input
-            type="text"
-            name="yearOfVehicle1"
-            onChange={(e) => funcs[0](e.target.value)}
-          />
+          <label htmlFor={`year of vehicle ${index + 1}`}>
+            Year of Vehicle
+            <input
+              id={`year of vehicle ${index + 1}`}
+              type="text"
+              name="yearOfVehicle1"
+              onChange={(e) => funcs[0](e.target.value)}
+            />
+          </label>
         </p>
         <p>
-          Make of Vehicle
-          <input
-            type="text"
-            name="makeOfVehicle1"
-            onChange={(e) => funcs[1](e.target.value)}
-          />
+          <label htmlFor={`make of vehicle ${index + 1}`}>
+            Make of Vehicle
+            <input
+              id={`make of vehicle ${index + 1}`}
+              type="text"
+              name="makeOfVehicle1"
+              onChange={(e) => funcs[1](e.target.value)}
+            />
+          </label>
         </p>
       </div>
       <div className="column">
         <p>
-          Model of Vehicle
-          <input
-            type="text"
-            name="modelOfVehicle1"
-            onChange={(e) => funcs[2](e.target.value)}
-          />
+          <label htmlFor={`model of vehicle ${index + 1}`}>
+            Model of Vehicle
+            <input
+              id={`model of vehicle ${index + 1}`}
+              type="text"
+              name="modelOfVehicle1"
+              onChange={(e) => funcs[2](e.target.value)}
+            />
+          </label>
         </p>
         <p>
-          Desired Coverage
-          <select
-            onChange={(e) => funcs[3](e.target.value)}
-            name="desiredCoverage1"
-          >
-            <option>---</option>
-            <option>Liability Only</option>
-            <option>Liability & Uninsured Motorist</option>
-            <option>Full Coverage</option>
-            <option>Not Sure</option>
-          </select>
+          <label htmlFor={`desired coverage ${index + 1}`}>
+            Desired Coverage
+            <select
+              id={`desired coverage ${index + 1}`}
+              onChange={(e) => funcs[3](e.target.value)}
+              name="desiredCoverage1"
+            >
+              <option>---</option>
+              <option>Liability Only</option>
+              <option>Liability & Uninsured Motorist</option>
+              <option>Full Coverage</option>
+              <option>Not Sure</option>
+            </select>
+          </label>
         </p>
       </div>
     </div>

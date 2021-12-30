@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import Header from "../components/Header";
 import NavBar from "../components/Nav-Bar";
@@ -12,6 +12,11 @@ import lifeInsuranceImg from "../images/Life-Insurance.png";
 import commercialInsuranceImg from "../images/Commercial-1.png";
 
 const Home = ({ width }) => {
+
+  useEffect(() => {
+    document.title = 'Cainglet Insurance Home'
+  })
+
   return (
     <div className="home-page">
       <Header />

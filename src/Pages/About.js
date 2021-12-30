@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 
 import Header from "../components/Header";
@@ -21,6 +21,10 @@ const About = ({ width }) => {
   const [interestIn, setInterestIn] = useState("");
   const [comments, setComments] = useState("");
   const [submit, setSubmit] = useState(false);
+
+  useEffect(() => {
+    document.title = "About Cainglet Insurance";
+  });
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -90,55 +94,70 @@ const About = ({ width }) => {
             </p>
             <form className="contact-us-form" onSubmit={handleSubmit} id="form">
               <p>
-                Name
-                <input
-                  type="text"
-                  name="name"
-                  required
-                  onChange={(e) => setName(e.target.value)}
-                />
+                <label htmlFor="name">
+                  Name
+                  <input
+                    id="name"
+                    type="text"
+                    name="name"
+                    required
+                    onChange={(e) => setName(e.target.value)}
+                  />
+                </label>
               </p>
               <p>
-                Email
-                <input
-                  type="text"
-                  name="email"
-                  required
-                  onChange={(e) => setEmail(e.target.value)}
-                />
+                <label htmlFor="email">
+                  Email
+                  <input
+                    id="email"
+                    type="text"
+                    name="email"
+                    required
+                    onChange={(e) => setEmail(e.target.value)}
+                  />
+                </label>
               </p>
               <p>
-                Phone
-                <input
-                  type="text"
-                  name="phone"
-                  required
-                  onChange={(e) => setPhone(e.target.value)}
-                />
+                <label htmlFor="phone">
+                  Phone
+                  <input
+                    id="phone"
+                    type="text"
+                    name="phone"
+                    required
+                    onChange={(e) => setPhone(e.target.value)}
+                  />
+                </label>
               </p>
               <p>
-                Interested In
-                <select
-                  onChange={(e) => setInterestIn(e.target.value)}
-                  name="interestedIn"
-                >
-                  <option>---</option>
-                  <option>Auto Insurance</option>
-                  <option>Homeowners Insurance</option>
-                  <option>Business Insurance</option>
-                  <option>Life Insurance</option>
-                  <option>Motorcycle Insurance</option>
-                  <option>Umbrella Insurance</option>
-                  <option>Other</option>
-                </select>
+                <label htmlFor="interested in">
+                  Interested In
+                  <select
+                    onChange={(e) => setInterestIn(e.target.value)}
+                    name="interestedIn"
+                    id="interested in"
+                  >
+                    <option>---</option>
+                    <option>Auto Insurance</option>
+                    <option>Homeowners Insurance</option>
+                    <option>Business Insurance</option>
+                    <option>Life Insurance</option>
+                    <option>Motorcycle Insurance</option>
+                    <option>Umbrella Insurance</option>
+                    <option>Other</option>
+                  </select>
+                </label>
               </p>
               <p>
-                Comments (optional)
-                <input
-                  type="text"
-                  name="comments"
-                  onChange={(e) => setComments(e.target.value)}
-                />
+                <label htmlFor="comments">
+                  Comments (optional)
+                  <input
+                    id="comments"
+                    type="text"
+                    name="comments"
+                    onChange={(e) => setComments(e.target.value)}
+                  />
+                </label>
               </p>
               <input
                 type="submit"

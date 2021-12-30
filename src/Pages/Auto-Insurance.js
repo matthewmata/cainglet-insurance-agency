@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 
 import Header from "../components/Header";
@@ -45,6 +45,10 @@ const AutoInsurance = ({ width }) => {
   const [twoCars, setTwoCars] = useState(false);
   const [threeCars, setThreeCars] = useState(false);
   const [fourCars, setFourCars] = useState(false);
+
+  useEffect(() => {
+    document.title = "Auto Insurance";
+  });
 
   const carFunctions = [
     [
@@ -156,10 +160,9 @@ const AutoInsurance = ({ width }) => {
           <div className="divider"></div>
           <form onSubmit={handleSubmit} id="form">
             <h6>Vehicle Information</h6>
-            {
-            carFunctions.map((funcs, index) => {
+            {carFunctions.map((funcs, index) => {
               if (
-                (index === 0) ||
+                index === 0 ||
                 (index === 1 && twoCars) ||
                 (index === 2 && threeCars) ||
                 (index === 3 && fourCars)
@@ -174,48 +177,60 @@ const AutoInsurance = ({ width }) => {
                   />
                 );
               }
-              return '';
+              return "";
             })}
             <h6>Driver Information</h6>
             <div className="columns">
               <div className="column">
                 <p>
-                  Full Name
-                  <input
-                    type="text"
-                    name="name"
-                    required
-                    onChange={(e) => setName(e.target.value)}
-                  />
+                  <label htmlFor="full name">
+                    Full Name
+                    <input
+                      id="full name"
+                      type="text"
+                      name="name"
+                      required
+                      onChange={(e) => setName(e.target.value)}
+                    />
+                  </label>
                 </p>
                 <p>
-                  Gender
-                  <select
-                    onChange={(e) => setGender(e.target.value)}
-                    name="gender"
-                  >
-                    <option>---</option>
-                    <option>Male</option>
-                    <option>Female</option>
-                  </select>
+                  <label htmlFor="gender">
+                    Gender
+                    <select
+                      id="gender"
+                      onChange={(e) => setGender(e.target.value)}
+                      name="gender"
+                    >
+                      <option>---</option>
+                      <option>Male</option>
+                      <option>Female</option>
+                    </select>
+                  </label>
                 </p>
               </div>
               <div className="column">
                 <p>
-                  Birthday (MM/DD/YYYY)
-                  <input
-                    type="text"
-                    name="birthday"
-                    onChange={(e) => setBirthday(e.target.value)}
-                  />
+                  <label htmlFor="birthday">
+                    Birthday (MM/DD/YYYY)
+                    <input
+                      id="birthday"
+                      type="text"
+                      name="birthday"
+                      onChange={(e) => setBirthday(e.target.value)}
+                    />
+                  </label>
                 </p>
                 <p>
-                  Drivers License Number
-                  <input
-                    type="text"
-                    name="driversLicenseNumber"
-                    onChange={(e) => setDriversLicenseNumber(e.target.value)}
-                  />
+                  <label htmlFor="drivers license number">
+                    Drivers License Number
+                    <input
+                      id="drivers license number"
+                      type="text"
+                      name="driversLicenseNumber"
+                      onChange={(e) => setDriversLicenseNumber(e.target.value)}
+                    />
+                  </label>
                 </p>
               </div>
             </div>
@@ -223,77 +238,101 @@ const AutoInsurance = ({ width }) => {
             <div className="columns">
               <div className="column">
                 <p>
-                  Street Address
-                  <input
-                    type="text"
-                    name="streetAddress"
-                    onChange={(e) => setStreetAddress(e.target.value)}
-                  />
+                  <label htmlFor="street address">
+                    Street Address
+                    <input
+                      id="street address"
+                      type="text"
+                      name="streetAddress"
+                      onChange={(e) => setStreetAddress(e.target.value)}
+                    />
+                  </label>
                 </p>
                 <p>
-                  City
-                  <input
-                    type="text"
-                    name="city"
-                    onChange={(e) => setCity(e.target.value)}
-                  />
+                  <label htmlFor="city">
+                    City
+                    <input
+                      id="city"
+                      type="text"
+                      name="city"
+                      onChange={(e) => setCity(e.target.value)}
+                    />
+                  </label>
                 </p>
                 <p>
-                  State
-                  <input
-                    type="text"
-                    name="state"
-                    onChange={(e) => setState(e.target.value)}
-                  />
+                  <label htmlFor="state">
+                    State
+                    <input
+                      id="state"
+                      type="text"
+                      name="state"
+                      onChange={(e) => setState(e.target.value)}
+                    />
+                  </label>
                 </p>
                 <p>
-                  Zip Code
-                  <input
-                    type="text"
-                    name="zip"
-                    onChange={(e) => setZip(e.target.value)}
-                  />
+                  <label htmlFor="zip code">
+                    Zip Code
+                    <input
+                      id="zip code"
+                      type="text"
+                      name="zip"
+                      onChange={(e) => setZip(e.target.value)}
+                    />
+                  </label>
                 </p>
               </div>
               <div className="column">
                 <p>
-                  Email
-                  <input
-                    type="text"
-                    name="email"
-                    required
-                    onChange={(e) => setEmail(e.target.value)}
-                  />
+                  <label htmlFor="email">
+                    Email
+                    <input
+                      id="email"
+                      type="text"
+                      name="email"
+                      required
+                      onChange={(e) => setEmail(e.target.value)}
+                    />
+                  </label>
                 </p>
                 <p>
-                  Phone
-                  <input
-                    type="text"
-                    name="phone"
-                    required
-                    onChange={(e) => setPhone(e.target.value)}
-                  />
+                  <label htmlFor="phone">
+                    Phone
+                    <input
+                      id="phone"
+                      type="text"
+                      name="phone"
+                      required
+                      onChange={(e) => setPhone(e.target.value)}
+                    />
+                  </label>
                 </p>
                 <p>
-                  Reason for shopping
-                  <select
-                    onChange={(e) => setReasonForShopping(e.target.value)}
-                    name="reasonForShopping"
-                  >
-                    <option>---</option>
-                    <option>Not insured</option>
-                    <option>Currently paying too much</option>
-                    <option>Insured with bad company</option>
-                    <option>Other</option>
-                  </select>
+                  <label htmlFor="reason for shopping">
+                    Reason for shopping
+                    <select
+                      id="reason for shopping"
+                      onChange={(e) => setReasonForShopping(e.target.value)}
+                      name="reasonForShopping"
+                    >
+                      <option>---</option>
+                      <option>Not insured</option>
+                      <option>Currently paying too much</option>
+                      <option>Insured with bad company</option>
+                      <option>Other</option>
+                    </select>
+                  </label>
                 </p>
                 <p>
-                  Comments (optional)
-                  <input
-                    type="text"
-                    name="comments"
-                    onChange={(e) => setComments(e.target.value)}
-                  />
+                  <label htmlFor="comments">
+                    Comments (optional)
+                    <input
+                      id="comments"
+                      type="text"
+                      name="comments"
+                      onChange={(e) => setComments(e.target.value)}
+                    />
+                  </label>
                 </p>
               </div>
             </div>

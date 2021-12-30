@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 
 import Header from "../components/Header";
@@ -18,6 +18,10 @@ const EspanolContactUs = ({ width }) => {
   const [interestIn, setInterestIn] = useState("");
   const [comments, setComments] = useState("");
   const [submit, setSubmit] = useState(false);
+ 
+  useEffect(() => {
+    document.title = "Espanol Contact Us";
+  });
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -90,53 +94,68 @@ const EspanolContactUs = ({ width }) => {
           </p>
           <div className="contact-us-form">
             <p>
-              Nombre
-              <input
-                type="text"
-                name="name"
-                required
-                onChange={(e) => setName(e.target.value)}
-              />
+              <label htmlFor="nombre">
+                Nombre
+                <input
+                  id="nombre"
+                  type="text"
+                  name="name"
+                  required
+                  onChange={(e) => setName(e.target.value)}
+                />
+              </label>
             </p>
             <p>
-              Correo Electrónico
-              <input
-                type="text"
-                name="email"
-                required
-                onChange={(e) => setEmail(e.target.value)}
-              />
+              <label htmlFor="correo electrónico">
+                Correo Electrónico
+                <input
+                  id="correo electrónico"
+                  type="text"
+                  name="email"
+                  required
+                  onChange={(e) => setEmail(e.target.value)}
+                />
+              </label>
             </p>
             <p>
-              Teléfono
-              <input
-                type="text"
-                name="phone"
-                required
-                onChange={(e) => setPhone(e.target.value)}
-              />
+              <label htmlFor="teléfono">
+                Teléfono
+                <input
+                  id="teléfono"
+                  type="text"
+                  name="phone"
+                  required
+                  onChange={(e) => setPhone(e.target.value)}
+                />
+              </label>
             </p>
             <p>
-              Interesado
-              <select
-                onChange={(e) => setInterestIn(e.target.value)}
-                name="interestedIn"
-              >
-                <option>---</option>
-                <option>Seguro de Auto</option>
-                <option>Seguro de Casa</option>
-                <option>Seguro de Vida</option>
-                <option>Seguro de Negocio</option>
-                <option>Seguro de Motocicleta</option>
-              </select>
+              <label htmlFor="interesado">
+                Interesado
+                <select
+                  id="interesado"
+                  onChange={(e) => setInterestIn(e.target.value)}
+                  name="interestedIn"
+                >
+                  <option>---</option>
+                  <option>Seguro de Auto</option>
+                  <option>Seguro de Casa</option>
+                  <option>Seguro de Vida</option>
+                  <option>Seguro de Negocio</option>
+                  <option>Seguro de Motocicleta</option>
+                </select>
+              </label>
             </p>
             <p>
-              Comentarios
-              <input
-                type="text"
-                name="comments"
-                onChange={(e) => setComments(e.target.value)}
-              />
+              <label htmlFor="comentarios">
+                Comentarios
+                <input
+                  id="comentarios"
+                  type="text"
+                  name="comments"
+                  onChange={(e) => setComments(e.target.value)}
+                />
+              </label>
             </p>
           </div>
           <input

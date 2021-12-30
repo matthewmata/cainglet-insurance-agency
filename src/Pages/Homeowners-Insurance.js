@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 
 import Header from "../components/Header";
@@ -25,6 +25,10 @@ const HomeOwnerInsurance = ({ width }) => {
   const [liabilityLimit, setLiabilityLimit] = useState("");
   const [reasonForShopping, setReasonForShopping] = useState("");
   const [submit, setSubmit] = useState(false);
+
+  useEffect(() => {
+    document.title = "Homeowners Insurance";
+  });
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -53,7 +57,7 @@ const HomeOwnerInsurance = ({ width }) => {
         liabilityLimit,
         reasonForShopping,
       }),
-    })
+    });
 
     if (ringyResponse.status === 200 || netlifyResponse.status === 200) {
       setSubmit(true);
@@ -81,39 +85,50 @@ const HomeOwnerInsurance = ({ width }) => {
             <div className="columns">
               <div className="column">
                 <p>
-                  Street Address
-                  <input
-                    type="text"
-                    name="streetAddress"
-                    onChange={(e) => setStreetAddress(e.target.value)}
-                  />
+                  <label htmlFor="street address">
+                    Street Address
+                    <input
+                      id="street address"
+                      type="text"
+                      name="streetAddress"
+                      onChange={(e) => setStreetAddress(e.target.value)}
+                    />
+                  </label>
                 </p>
                 <p>
-                  City
-                  <input
-                    type="text"
-                    name="city"
-                    onChange={(e) => setCity(e.target.value)}
-                  />
+                  <label htmlFor="city">
+                    City
+                    <input
+                      id="city"
+                      type="text"
+                      name="city"
+                      onChange={(e) => setCity(e.target.value)}
+                    />
+                  </label>
                 </p>
               </div>
               <div className="column">
                 <p>
-                  State
-                  <input
-                    type="text"
-                    name="state"
-                    onChange={(e) => setState(e.target.value)}
-                  />
+                  <label htmlFor="state">
+                    State
+                    <input
+                      id="state"
+                      type="text"
+                      name="state"
+                      onChange={(e) => setState(e.target.value)}
+                    />
+                  </label>
                 </p>
-
                 <p>
-                  Zip Code
-                  <input
-                    type="text"
-                    name="zip"
-                    onChange={(e) => setZip(e.target.value)}
-                  />
+                  <label htmlFor="zip code">
+                    Zip Code
+                    <input
+                      id="zip code"
+                      type="text"
+                      name="zip"
+                      onChange={(e) => setZip(e.target.value)}
+                    />
+                  </label>
                 </p>
               </div>
             </div>
@@ -122,79 +137,105 @@ const HomeOwnerInsurance = ({ width }) => {
               <div className="column">
                 <h6 className="split">Requested Coverage (Optional)</h6>
                 <p>
-                  Dwelling Coverage Amount
-                  <input
-                    type="text"
-                    name="dwellingCoverageAmount"
-                    onChange={(e) => setDwellingCoveringAmount(e.target.value)}
-                  />
+                  <label htmlFor="dwelling coverage amount">
+                    Dwelling Coverage Amount
+                    <input
+                      id="dwelling coverage amount"
+                      type="text"
+                      name="dwellingCoverageAmount"
+                      onChange={(e) =>
+                        setDwellingCoveringAmount(e.target.value)
+                      }
+                    />
+                  </label>
                 </p>
                 <p>
-                  Deductible
-                  <input
-                    type="text"
-                    name="deductible"
-                    onChange={(e) => setDeductible(e.target.value)}
-                  />
+                  <label htmlFor="deductible">
+                    Deductible
+                    <input
+                      id="deductible"
+                      type="text"
+                      name="deductible"
+                      onChange={(e) => setDeductible(e.target.value)}
+                    />
+                  </label>
                 </p>
                 <p>
-                  Liability Limit
-                  <input
-                    type="text"
-                    name="liabilityLimit"
-                    onChange={(e) => setLiabilityLimit(e.target.value)}
-                  />
+                  <label htmlFor="liability limit">
+                    Liability Limit
+                    <input
+                      id="liability limit"
+                      type="text"
+                      name="liabilityLimit"
+                      onChange={(e) => setLiabilityLimit(e.target.value)}
+                    />
+                  </label>
                 </p>
                 <p>
-                  Reason for shopping
-                  <select
-                    onChange={(e) => setReasonForShopping(e.target.value)}
-                    name="reasonForShopping"
-                  >
-                    <option>---</option>
-                    <option>Not insured</option>
-                    <option>Currently paying too much</option>
-                    <option>Insured with bad company</option>
-                    <option>Other</option>
-                  </select>
+                  <label htmlFor="reason for shopping">
+                    Reason for shopping
+                    <select
+                      id="reason for shopping"
+                      onChange={(e) => setReasonForShopping(e.target.value)}
+                      name="reasonForShopping"
+                    >
+                      <option>---</option>
+                      <option>Not insured</option>
+                      <option>Currently paying too much</option>
+                      <option>Insured with bad company</option>
+                      <option>Other</option>
+                    </select>
+                  </label>
                 </p>
               </div>
               <div className="column">
                 <h6 className="split">Contact Information</h6>
                 <p>
-                  Name
-                  <input
-                    type="text"
-                    name="name"
-                    required
-                    onChange={(e) => setName(e.target.value)}
-                  />
+                  <label htmlFor="name">
+                    Name
+                    <input
+                      id="name"
+                      type="text"
+                      name="name"
+                      required
+                      onChange={(e) => setName(e.target.value)}
+                    />
+                  </label>
                 </p>
                 <p>
-                  Phone
-                  <input
-                    type="text"
-                    name="phone"
-                    required
-                    onChange={(e) => setPhone(e.target.value)}
-                  />
+                  <label htmlFor="phone">
+                    Phone
+                    <input
+                      id="phone"
+                      type="text"
+                      name="phone"
+                      required
+                      onChange={(e) => setPhone(e.target.value)}
+                    />
+                  </label>
                 </p>
                 <p>
-                  Email
-                  <input
-                    type="text"
-                    name="email"
-                    required
-                    onChange={(e) => setEmail(e.target.value)}
-                  />
+                  <label htmlFor="email">
+                    Email
+                    <input
+                      id="email"
+                      type="text"
+                      name="email"
+                      required
+                      onChange={(e) => setEmail(e.target.value)}
+                    />
+                  </label>
                 </p>
                 <p>
-                  Comments (optional)
-                  <input
-                    type="text"
-                    name="comments"
-                    onChange={(e) => setComments(e.target.value)}
-                  />
+                  <label htmlFor="comments">
+                    Comments (optional)
+                    <input
+                      id="comments"
+                      type="text"
+                      name="comments"
+                      onChange={(e) => setComments(e.target.value)}
+                    />
+                  </label>
                 </p>
               </div>
             </div>

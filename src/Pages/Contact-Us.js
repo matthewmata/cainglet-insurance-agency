@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 
 import Header from "../components/Header";
@@ -18,6 +18,10 @@ const ContactUs = ({ width }) => {
   const [interestIn, setInterestIn] = useState("");
   const [comments, setComments] = useState("");
   const [submit, setSubmit] = useState(false);
+
+  useEffect(() => {
+    document.title = "Contact Us";
+  });
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -88,55 +92,70 @@ const ContactUs = ({ width }) => {
           </p>
           <div className="contact-us-form">
             <p>
-              Name
-              <input
-                type="text"
-                name="name"
-                required
-                onChange={(e) => setName(e.target.value)}
-              />
+              <label htmlFor="name">
+                Name
+                <input
+                  id="name"
+                  type="text"
+                  name="name"
+                  required
+                  onChange={(e) => setName(e.target.value)}
+                />
+              </label>
             </p>
             <p>
-              Email
-              <input
-                type="text"
-                name="email"
-                required
-                onChange={(e) => setEmail(e.target.value)}
-              />
+              <label htmlFor="email">
+                Email
+                <input
+                  id="email"
+                  type="text"
+                  name="email"
+                  required
+                  onChange={(e) => setEmail(e.target.value)}
+                />
+              </label>
             </p>
             <p>
-              Phone
-              <input
-                type="text"
-                name="phone"
-                required
-                onChange={(e) => setPhone(e.target.value)}
-              />
+              <label htmlFor="phone">
+                Phone
+                <input
+                  id="phone"
+                  type="text"
+                  name="phone"
+                  required
+                  onChange={(e) => setPhone(e.target.value)}
+                />
+              </label>
             </p>
             <p>
-              Interested In
-              <select
-                name="interestedIn"
-                onChange={(e) => setInterestIn(e.target.value)}
-              >
-                <option>---</option>
-                <option>Auto Insurance</option>
-                <option>Homeowners Insurance</option>
-                <option>Business Insurance</option>
-                <option>Life Insurance</option>
-                <option>Motorcycle Insurance</option>
-                <option>Umbrella Insurance</option>
-                <option>Other</option>
-              </select>
+              <label htmlFor="interested in">
+                Interested In
+                <select
+                  id="interested in"
+                  name="interestedIn"
+                  onChange={(e) => setInterestIn(e.target.value)}
+                >
+                  <option>---</option>
+                  <option>Auto Insurance</option>
+                  <option>Homeowners Insurance</option>
+                  <option>Business Insurance</option>
+                  <option>Life Insurance</option>
+                  <option>Motorcycle Insurance</option>
+                  <option>Umbrella Insurance</option>
+                  <option>Other</option>
+                </select>
+              </label>
             </p>
             <p>
-              Comments (optional)
-              <input
-                type="text"
-                name="comments"
-                onChange={(e) => setComments(e.target.value)}
-              />
+              <label htmlFor="comments">
+                Comments (optional)
+                <input
+                  id="comments"
+                  type="text"
+                  name="comments"
+                  onChange={(e) => setComments(e.target.value)}
+                />
+              </label>
             </p>
           </div>
           <input
