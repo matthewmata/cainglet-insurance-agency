@@ -81,11 +81,11 @@ const ContactUs = ({ width }) => {
               </svg>
             </p>
           </a>
-          <h5>
+          <div className="availablility">
             <b>Monday - Friday: 9:00 am - 6:00 pm</b>
             <br />
             <b>Saturday: 10:00 am - 12:30 pm</b>
-          </h5>
+          </div>
           <div className="divider"></div>
           <p className="call-us">
             <b>Contact Us Today!</b>

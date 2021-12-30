@@ -81,7 +81,7 @@ const HomeOwnerInsurance = ({ width }) => {
           </h3>
           <div className="divider"></div>
           <form onSubmit={handleSubmit} id="form">
-            <h6>Home Information</h6>
+            <div className="form-header">Home Information</div>
             <div className="columns">
               <div className="column">
                 <p>
@@ -135,7 +135,9 @@ const HomeOwnerInsurance = ({ width }) => {
 
             <div className="columns">
               <div className="column">
-                <h6 className="split">Requested Coverage (Optional)</h6>
+                <div className="split form-header">
+                  Requested Coverage (Optional)
+                </div>
                 <p>
                   <label htmlFor="dwelling coverage amount">
                     Dwelling Coverage Amount
@@ -189,7 +191,7 @@ const HomeOwnerInsurance = ({ width }) => {
                 </p>
               </div>
               <div className="column">
-                <h6 className="split">Contact Information</h6>
+                <div className="split form-header">Contact Information</div>
                 <p>
                   <label htmlFor="name">
                     Name

@@ -159,7 +159,7 @@ const AutoInsurance = ({ width }) => {
           </h3>
           <div className="divider"></div>
           <form onSubmit={handleSubmit} id="form">
-            <h6>Vehicle Information</h6>
+            <div className="form-header">Vehicle Information</div>
             {carFunctions.map((funcs, index) => {
               if (
                 index === 0 ||
@@ -179,7 +179,7 @@ const AutoInsurance = ({ width }) => {
               }
               return "";
             })}
-            <h6>Driver Information</h6>
+            <div className="form-header">Driver Information</div>
             <div className="columns">
               <div className="column">
                 <p>
@@ -234,7 +234,7 @@ const AutoInsurance = ({ width }) => {
                 </p>
               </div>
             </div>
-            <h6>Contact Information</h6>
+            <div className="form-header">Contact Information</div>
             <div className="columns">
               <div className="column">
                 <p>

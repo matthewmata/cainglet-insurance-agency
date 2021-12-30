@@ -61,12 +61,12 @@ const Commerical = ({ width }) => {
           id="form"
         >
           <h1>Commerical</h1>
-          <h3>
+          <div className="form-paragraph">
             Do you own or operate your own business? The Cainglet Insurance
             Agency has you covered! We offer reliable, dependable, and
             affordable business insurance policies for a multitude of different
             industries. Some industries that we specialize in include:
-          </h3>
+          </div>
           <div className="columns">
             <ol className={width > 754 ? "column" : ""}>
               <li>• Restaurants</li>
@@ -121,11 +121,11 @@ const Commerical = ({ width }) => {
               </svg>
             </p>
           </a>
-          <h5>
+          <div className="availablility">
             <b>Monday - Friday 9:00 pm - 7:00 pm</b>
             <br />
             <b>Saturday: 10:00 am - 2:00 pm</b>
-          </h5>
+          </div>
           <div className="divider"></div>
           <p className="call-us">
             <b>Contact Us Today!</b>

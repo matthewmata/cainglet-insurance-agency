@@ -82,12 +82,12 @@ const About = ({ width }) => {
               <b>25 years of award-winning service</b> to our clients. When you
               sign up with us, you are taken care of!
             </div>
-            <h3>
+            <div className="form-paragraph">
               Please feel free to call us at{" "}
               <a href="tel:310-830-7136">( 310-830-7136 )</a> or
               <a href="mailto:acainglet1@farmersagent.com"> email us </a>
               if you have any questions with your insurance needs!
-            </h3>
+            </div>
             <div className="divider"></div>
             <p className="call-us">
               <b>Contact Us Today!</b>

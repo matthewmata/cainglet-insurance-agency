@@ -83,11 +83,11 @@ const EspanolContactUs = ({ width }) => {
               </svg>
             </p>
           </a>
-          <h5>
+          <div className="availablility">
             <b>Lunes a Viernes de: 9:00 am - 6:00 pm</b>
             <br />
             <b>Sábado: 10:00 am - 2:00 pm</b>
-          </h5>
+          </div>
           <div className="divider"></div>
           <p className="call-us">
             <b>¡Obtenga su Cotización Gratis Aquí!</b>
