@@ -1,5 +1,5 @@
 # Cainglet Insurance Agency Website
-## Link to [caingletinsurance.com](https://caingletinsurance.com/)
+## Link to deployed site: [caingletinsurance.com](https://caingletinsurance.com/)
 
 
 > Designed functional web and mobile layout through wireframing to provide early concept designs
