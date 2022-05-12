@@ -1,9 +1,11 @@
 # Cainglet Insurance Agency Website
-##[https://caingletinsurance.com/](https://caingletinsurance.com/)
+## [https://caingletinsurance.com/](https://caingletinsurance.com/)
 
 
 > Designed functional web and mobile layout through wireframing to provide early concept designs
+
 > Implemented a mobile-responsive and ADA accessible application
+
 > Connected web application to [Ringy API](https://www.ringy.com/) and [Netlify](https://www.netlify.com/) to handle form submissions
 
 ## Development
