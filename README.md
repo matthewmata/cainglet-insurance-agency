@@ -1,5 +1,5 @@
 # Cainglet Insurance Agency Website
-Deployed agency website to used to attract online insurance leads, and sell life, property, and car insurance.
+Deployed agency website used to attract online insurance leads, and sell life, property, and car insurance.
 
 ## Link to deployed site: [caingletinsurance.com](https://caingletinsurance.com/)
 
