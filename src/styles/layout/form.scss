@@ -69,7 +69,7 @@
     font-size: 20px;
     line-height: 1.625;
   }
-  
+
   .availablility {
     font-size: 20px;
     line-height: 1.625;
@@ -95,7 +95,7 @@
       margin: 15px 0;
     }
 
-    input {
+    input[type="text"] {
       padding: 12px;
       border-radius: 5px;
       border: 1px solid #ccc;
@@ -230,5 +230,17 @@
   @media (min-width: $tablet + 1px) {
     width: 90px;
     padding: 0 80px;
+  }
+}
+
+.textMessageOptIn {
+  margin-top: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+
+  input[type="radio"] {
+    margin-right: 4px;
   }
 }

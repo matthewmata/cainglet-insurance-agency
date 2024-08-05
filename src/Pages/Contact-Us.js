@@ -17,6 +17,7 @@ const ContactUs = ({ width }) => {
   const [email, setEmail] = useState("");
   const [interestIn, setInterestIn] = useState("");
   const [comments, setComments] = useState("");
+  const [textMessageOptIn, setTextMessageOptIn] = useState("no");
   const [submit, setSubmit] = useState(false);
 
   useEffect(() => {
@@ -42,8 +43,9 @@ const ContactUs = ({ width }) => {
         email,
         interestIn,
         comments,
+        textMessageOptIn,
       }),
-    })
+    });
 
     if (ringyResponse.status === 200 || netlifyResponse.status === 200) {
       setSubmit(true);
@@ -156,6 +158,35 @@ const ContactUs = ({ width }) => {
                   onChange={(e) => setComments(e.target.value)}
                 />
               </label>
+            </p>
+            <p>
+              Would you like to opt-in for text messages?
+              <div className="textMessageOptIn">
+                <div>
+                  <label for="yes">
+                    <input
+                      type="radio"
+                      id="yes"
+                      name="yes"
+                      checked={textMessageOptIn === "yes"}
+                      onChange={() => setTextMessageOptIn("yes")}
+                    />
+                    Yes
+                  </label>
+                </div>
+                <div>
+                  <label for="no">
+                    <input
+                      type="radio"
+                      id="no"
+                      name="no"
+                      checked={textMessageOptIn === "no"}
+                      onChange={() => setTextMessageOptIn("no")}
+                    />
+                    No
+                  </label>
+                </div>
+              </div>
             </p>
           </div>
           <input

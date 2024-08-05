@@ -25,6 +25,7 @@ const HomeOwnerInsurance = ({ width }) => {
   const [liabilityLimit, setLiabilityLimit] = useState("");
   const [reasonForShopping, setReasonForShopping] = useState("");
   const [submit, setSubmit] = useState(false);
+  const [textMessageOptIn, setTextMessageOptIn] = useState("no");
 
   useEffect(() => {
     document.title = "Homeowners Insurance";
@@ -56,6 +57,7 @@ const HomeOwnerInsurance = ({ width }) => {
         deductible,
         liabilityLimit,
         reasonForShopping,
+        textMessageOptIn,
       }),
     });
 
@@ -238,6 +240,35 @@ const HomeOwnerInsurance = ({ width }) => {
                       onChange={(e) => setComments(e.target.value)}
                     />
                   </label>
+                </p>
+                <p>
+                  Would you like to opt-in for text messages?
+                  <div className="textMessageOptIn">
+                    <div>
+                      <label for="yes">
+                        <input
+                          type="radio"
+                          id="yes"
+                          name="yes"
+                          checked={textMessageOptIn === "yes"}
+                          onChange={() => setTextMessageOptIn("yes")}
+                        />
+                        Yes
+                      </label>
+                    </div>
+                    <div>
+                      <label for="no">
+                        <input
+                          type="radio"
+                          id="no"
+                          name="no"
+                          checked={textMessageOptIn === "no"}
+                          onChange={() => setTextMessageOptIn("no")}
+                        />
+                        No
+                      </label>
+                    </div>
+                  </div>
                 </p>
               </div>
             </div>

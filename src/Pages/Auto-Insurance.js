@@ -45,6 +45,7 @@ const AutoInsurance = ({ width }) => {
   const [twoCars, setTwoCars] = useState(false);
   const [threeCars, setThreeCars] = useState(false);
   const [fourCars, setFourCars] = useState(false);
+  const [textMessageOptIn, setTextMessageOptIn] = useState("no");
 
   useEffect(() => {
     document.title = "Auto Insurance";
@@ -119,6 +120,7 @@ const AutoInsurance = ({ width }) => {
         modelOfVehicle4,
         makeOfVehicle4,
         desiredCoverage4,
+        textMessageOptIn,
       }),
     });
 
@@ -333,6 +335,35 @@ const AutoInsurance = ({ width }) => {
                       onChange={(e) => setComments(e.target.value)}
                     />
                   </label>
+                </p>
+                <p>
+                  Would you like to opt-in for text messages?
+                  <div className="textMessageOptIn">
+                    <div>
+                      <label for="yes">
+                        <input
+                          type="radio"
+                          id="yes"
+                          name="yes"
+                          checked={textMessageOptIn === "yes"}
+                          onChange={() => setTextMessageOptIn("yes")}
+                        />
+                        Yes
+                      </label>
+                    </div>
+                    <div>
+                      <label for="no">
+                        <input
+                          type="radio"
+                          id="no"
+                          name="no"
+                          checked={textMessageOptIn === "no"}
+                          onChange={() => setTextMessageOptIn("no")}
+                        />
+                        No
+                      </label>
+                    </div>
+                  </div>
                 </p>
               </div>
             </div>

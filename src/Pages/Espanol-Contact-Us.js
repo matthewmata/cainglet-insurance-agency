@@ -17,8 +17,9 @@ const EspanolContactUs = ({ width }) => {
   const [email, setEmail] = useState("");
   const [interestIn, setInterestIn] = useState("");
   const [comments, setComments] = useState("");
+  const [textMessageOptIn, setTextMessageOptIn] = useState("no");
   const [submit, setSubmit] = useState(false);
- 
+
   useEffect(() => {
     document.title = "Espanol Contact Us";
   });
@@ -42,6 +43,7 @@ const EspanolContactUs = ({ width }) => {
         email,
         interestIn,
         comments,
+        textMessageOptIn,
       }),
     });
 
@@ -156,6 +158,35 @@ const EspanolContactUs = ({ width }) => {
                   onChange={(e) => setComments(e.target.value)}
                 />
               </label>
+            </p>
+            <p>
+              ¿Le gustaría suscribirse para recibir mensajes de texto?
+              <div className="textMessageOptIn">
+                <div>
+                  <label for="yes">
+                    <input
+                      type="radio"
+                      id="yes"
+                      name="yes"
+                      checked={textMessageOptIn === "yes"}
+                      onChange={() => setTextMessageOptIn("yes")}
+                    />
+                    Sí
+                  </label>
+                </div>
+                <div>
+                  <label for="no">
+                    <input
+                      type="radio"
+                      id="no"
+                      name="no"
+                      checked={textMessageOptIn === "no"}
+                      onChange={() => setTextMessageOptIn("no")}
+                    />
+                    No
+                  </label>
+                </div>
+              </div>
             </p>
           </div>
           <input
