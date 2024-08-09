@@ -7,6 +7,7 @@ import EspanolContactUs from "../Pages/Espanol-Contact-Us";
 import Auto from "../Pages/Auto-Insurance";
 import HomeOwners from "../Pages/Homeowners-Insurance";
 import Commerical from "../Pages/Commerical-Insurance";
+import PrivacyPolicy from "../Pages/Privacy-Policy";
 
 class Routes extends Component {
   constructor(props) {
@@ -52,6 +53,10 @@ class Routes extends Component {
           <Route
             path="/espanol-contact-us"
             render={() => <EspanolContactUs width={this.state.width} />}
+          />
+          <Route
+            path="/privacy-policy"
+            render={() => <PrivacyPolicy width={this.state.width} />}
           />
           <Route
             path="/quote/auto-insurance"

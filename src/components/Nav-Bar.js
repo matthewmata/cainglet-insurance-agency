@@ -84,6 +84,10 @@ const NavBar = () => {
             >
               Instagram
             </a>
+            <hr className="navbar-divider" />
+            <Link to="/privacy-policy" className="navbar-item">
+              Privacy Policy
+            </Link>
           </div>
         </div>
         <div className="navbar-start nav-icon">
