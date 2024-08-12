@@ -15,7 +15,7 @@ const Hero = () => {
               CAINGLET INSURANCE AGENCY
               <br /> Insurance you can depend on!
             </h1>
-            <div className='hero-text-space'></div>
+            <div className="hero-text-space"></div>
           </div>
           <div className="hero-quote-box is-vcentered ">
             <h2>Get Started Now</h2>
@@ -56,6 +56,9 @@ const Hero = () => {
                 <strong>310-830-7136</strong>
               </h1>
             </a>
+            <Link to="/privacy-policy" className="privacy-policy-link">
+              Link To Privacy Policy
+            </Link>
           </div>
         </div>
       </div>

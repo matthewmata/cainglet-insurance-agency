@@ -46,3 +46,11 @@
     font-size: 2.25rem;
   }
 }
+
+.privacy-policy-link {
+  color: #004990 !important;
+  &:hover {
+    color: #004990 !important;
+    text-decoration: underline !important;
+  }
+}

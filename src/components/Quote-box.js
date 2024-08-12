@@ -42,6 +42,12 @@ const QuoteBox = () => {
               <strong>310-830-7136</strong>
             </h5>
           </a>
+          <Link
+            to="/privacy-policy"
+            className="privacy-policy-link privacy-policy-link-text"
+          >
+            Link To Privacy Policy
+          </Link>
         </div>
         <h5>
           CAINGLET INSURANCE AGENCY
