@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 import Header from "../components/Header";
 import NavBar from "../components/Nav-Bar";
@@ -81,6 +82,9 @@ const HomeOwnerInsurance = ({ width }) => {
             you purchase auto insurance smartly with quality and affordable
             insurance with the Cainglet Agency!
           </h3>
+          <Link to="/privacy-policy" className="privacy-policy-link">
+            Link To Privacy Policy
+          </Link>
           <div className="divider"></div>
           <form onSubmit={handleSubmit} id="form">
             <div className="form-header">Home Information</div>

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 import Header from "../components/Header";
 import NavBar from "../components/Nav-Bar";
@@ -89,6 +90,11 @@ const About = ({ width }) => {
               <a href="tel:310-830-7136">( 310-830-7136 )</a> or
               <a href="mailto:acainglet1@farmersagent.com"> email us </a>
               if you have any questions with your insurance needs!
+            </div>
+            <div className="privacy-policy-link-container">
+              <Link to="/privacy-policy" className="privacy-policy-link">
+                Link To Privacy Policy
+              </Link>
             </div>
             <div className="divider"></div>
             <p className="call-us">

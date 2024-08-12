@@ -248,3 +248,15 @@
 .privacy-policy {
   font-size: 14px;
 }
+
+.privacy-policy-link-container {
+  margin-top: 12px;
+}
+
+.privacy-policy-link {
+  color: #004990;
+  &:hover {
+    color: #004990;
+    text-decoration: underline;
+  }
+}

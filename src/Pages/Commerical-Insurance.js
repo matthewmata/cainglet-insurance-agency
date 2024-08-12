@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 import Header from "../components/Header";
 import NavBar from "../components/Nav-Bar";
@@ -127,6 +128,11 @@ const Commerical = ({ width }) => {
             <b>Monday - Friday 9:00 pm - 7:00 pm</b>
             <br />
             <b>Saturday: 10:00 am - 2:00 pm</b>
+          </div>
+          <div className="privacy-policy-link-container">
+            <Link to="/privacy-policy" className="privacy-policy-link">
+              Link To Privacy Policy
+            </Link>
           </div>
           <div className="divider"></div>
           <p className="call-us">
