@@ -24,14 +24,11 @@ const PrivacyPolicy = ({ width }) => {
               request includes the full name, date of birth, home address, phone
               number, email address, gender, driver’s license number, VIN # of
               vehicles, year make and model of vehicles, and desired coverage
-              level. This information is only used for quoting purposes. Your
-              information WILL NOT be sold or shared to third parties or other
-              outside parties. This includes phone numbers, emails, and any
-              other sensitive information. If the quote is converted to a full
-              policy with our agency, this information will be stored to our
-              internal database to allow us to contact you for servicing of your
-              policy. This includes payments, policy updates, upcoming renewals,
-              company changes, and any other policy related services.
+              level. Phone numbers collected for SMS consent will not be shared
+              with third parties or affiliates for marketing purposes under any
+              circumstances. This information is only used for quoting purposes.
+              Additionally, none of the other information collected will be sold
+              or shared with third parties under any circumstances.
             </div>
             {width <= 1023 ? <div className="divider"></div> : ""}
           </section>

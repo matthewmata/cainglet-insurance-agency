@@ -166,7 +166,8 @@ const EspanolContactUs = ({ width }) => {
               </label>
             </p>
             <p>
-              ¿Le gustaría suscribirse para recibir mensajes de texto?
+              Al marcar este formulario, acepto recibir SMS de la Agencia de
+              Seguros Cainglet
               <div className="textMessageOptIn">
                 <div>
                   <label for="yes">

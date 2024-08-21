@@ -166,7 +166,8 @@ const ContactUs = ({ width }) => {
               </label>
             </p>
             <p>
-              Would you like to opt-in for text messages?
+              By checking this form, I accept to receive SMS from the Cainglet
+              Insurance Agency
               <div className="textMessageOptIn">
                 <div>
                   <label for="yes">
