@@ -246,7 +246,41 @@
 }
 
 .privacy-policy {
-  font-size: 14px;
+  .bold-header {
+    display: inline-block;
+    font-family: "Acumin-BdItPro";
+    margin-bottom: 16px;
+
+    &:not(:first-child) {
+      margin-top: 16px;
+    }
+  }
+
+  div {
+    font-family: "Acumin-RPro";
+    font-size: 16px;
+  }
+
+  .second-paragraph {
+    margin-top: 16px;
+  }
+
+  ul {
+    list-style: circle;
+    margin: 8px 0 16px 24px;
+    li {
+      font-family: "Acumin-RPro";
+      font-size: 16px;
+    }
+  }
+
+  .numbered-list {
+    list-style: decimal;
+  }
+
+  .no-margin-bottom {
+    margin-bottom: 0;
+  }
 }
 
 .privacy-policy-link-container {
